@@ -651,14 +651,20 @@
 
   .rail img { width: 100%; height: 250px; object-fit: cover; }
 
-  .rail--proof li { width: 226px; }
+  .rail--proof li { width: 188px; }
+
   .rail--proof img {
+    width: 100%;
     height: auto;
-    object-fit: contain;
-    background: var(--surface-alt);
+    aspect-ratio: 739 / 1600;
+    object-fit: cover;
+    object-position: 50% 50%;
+    background: #0B0D10;
   }
 
-  .proof .rail { align-items: flex-start; }
+  @media (max-width: 640px) {
+    .rail--proof li { width: 168px; }
+  }
 
   .rail figcaption {
     position: absolute;
