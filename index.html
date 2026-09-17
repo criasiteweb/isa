@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#082033">
-<meta name="description" content="Corretora especialista em Minha Casa Minha Vida e financiamento pela Caixa Econômica Federal no Grande ABC, Zona Leste e São Paulo. Simule sua faixa e fale direto no WhatsApp.">
+<meta name="description" content="Corretora especialista em Minha Casa Minha Vida e financiamento pela Caixa Econômica Federal em toda a Região Metropolitana de São Paulo. Simule sua faixa e fale direto no WhatsApp.">
 <meta name="author" content="Isabella Carvalho">
 <link rel="canonical" href="https://criasiteweb.github.io/isa-carvalho-imoveis/">
 
@@ -37,7 +37,7 @@
   "url": "https://criasiteweb.github.io/isa-carvalho-imoveis/",
   "image": "https://criasiteweb.github.io/isa-carvalho-imoveis/preview.jpg",
   "telephone": "+5511988097416",
-  "areaServed": ["Santo André", "São Bernardo do Campo", "São Caetano do Sul", "Zona Leste de São Paulo", "São Paulo"],
+  "areaServed": { "@type": "AdministrativeArea", "name": "Região Metropolitana de São Paulo" },
   "address": { "@type": "PostalAddress", "addressRegion": "SP", "addressCountry": "BR" },
   "sameAs": ["https://www.instagram.com/isacarvalhoimoveis/"],
   "employee": {
@@ -49,33 +49,31 @@
 }
 </script>
 
-<title>Isa Carvalho Imóveis | Corretora Minha Casa Minha Vida no ABC e Zona Leste</title>
+<title>Isa Carvalho Imóveis | Corretora Minha Casa Minha Vida na Grande São Paulo</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Instrument+Sans:wght@400;500;600&display=swap">
 
 <style>
   :root {
-    --ground:      #F5F7F9;
+    --ground:      #F8F9FA;
     --surface:     #FFFFFF;
-    --surface-alt: #E9EEF3;
-    --ink:         #0E161D;
-    --ink-soft:    #55636F;
-    --line:        #D8E0E7;
-    --brand:       #10406A;
-    --brand-deep:  #082033;
-    --brand-soft:  #7FB2D9;
+    --surface-alt: #F1F3F5;
+    --ink:         #171717;
+    --ink-soft:    #6C757D;
+    --line:        #E9ECEF;
+    --brand:       #0B5ED7;
+    --cta:         #0D6EFD;
+    --brand-weak:  #EDF3FE;
     --on-brand:    #FFFFFF;
-    --brand-ink:   #EAF1F7;
-    --accent:        #FF6B2C;
-    --accent-strong: #E4520F;
-    --on-accent:     #26100A;
-    --accent-weak:   #FFEDE3;
-    --zap:         #1A9E52;
+    --deep:        #101418;
+    --deep-ink:    #F1F3F5;
+    --deep-soft:   #A8B2BD;
+    --zap:         #1FA855;
     --on-zap:      #FFFFFF;
-    --shadow:      0 1px 2px rgba(10, 34, 54, .06), 0 10px 28px -16px rgba(10, 34, 54, .32);
-    --scrim-1:     rgba(10, 34, 54, .40);
-    --scrim-2:     rgba(10, 34, 54, .86);
+    --shadow:      0 1px 2px rgba(23, 23, 23, .04), 0 8px 24px -16px rgba(23, 23, 23, .18);
+    --scrim-1:     rgba(16, 20, 24, .38);
+    --scrim-2:     rgba(16, 20, 24, .88);
 
     --step--1: clamp(.79rem, .77rem + .1vw, .84rem);
     --step-0:  clamp(.98rem, .95rem + .15vw, 1.05rem);
@@ -86,50 +84,46 @@
 
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
-      --ground:      #0A1016;
-      --surface:     #131B23;
-      --surface-alt: #1B2631;
-      --ink:         #E3EBF2;
-      --ink-soft:    #91A1AF;
-      --line:        #253240;
-      --brand:       #59A3D8;
-      --brand-deep:  #07131D;
-      --brand-soft:  #9BC8E8;
-      --on-brand:    #05141F;
-      --brand-ink:   #E9F2F9;
-      --accent:        #FF8A50;
-      --accent-strong: #FFA574;
-      --on-accent:     #23100A;
-      --accent-weak:   #2C1A10;
-      --zap:         #33C06F;
-      --on-zap:      #04180D;
-      --shadow:      0 1px 2px rgba(0, 0, 0, .5), 0 10px 28px -16px rgba(0, 0, 0, .85);
-      --scrim-1:     rgba(7, 19, 29, .52);
-      --scrim-2:     rgba(7, 19, 29, .9);
+      --ground:      #0F1113;
+      --surface:     #17191C;
+      --surface-alt: #1E2125;
+      --ink:         #E9ECEF;
+      --ink-soft:    #9CA3AF;
+      --line:        #2A2E33;
+      --brand:       #4D96F5;
+      --cta:         #3B82F6;
+      --brand-weak:  #121C2B;
+      --on-brand:    #FFFFFF;
+      --deep:        #0A0C0E;
+      --deep-ink:    #F1F3F5;
+      --deep-soft:   #A8B2BD;
+      --zap:         #2FBF6B;
+      --on-zap:      #05180D;
+      --shadow:      0 1px 2px rgba(0, 0, 0, .5), 0 8px 24px -16px rgba(0, 0, 0, .8);
+      --scrim-1:     rgba(6, 8, 10, .5);
+      --scrim-2:     rgba(6, 8, 10, .9);
     }
   }
 
   :root[data-theme="dark"] {
-    --ground:      #0A1016;
-    --surface:     #131B23;
-    --surface-alt: #1B2631;
-    --ink:         #E3EBF2;
-    --ink-soft:    #91A1AF;
-    --line:        #253240;
-    --brand:       #59A3D8;
-    --brand-deep:  #07131D;
-    --brand-soft:  #9BC8E8;
-    --on-brand:    #05141F;
-    --brand-ink:   #E9F2F9;
-    --accent:        #FF8A50;
-    --accent-strong: #FFA574;
-    --on-accent:     #23100A;
-    --accent-weak:   #2C1A10;
-    --zap:         #33C06F;
-    --on-zap:      #04180D;
-    --shadow:      0 1px 2px rgba(0, 0, 0, .5), 0 10px 28px -16px rgba(0, 0, 0, .85);
-    --scrim-1:     rgba(7, 19, 29, .52);
-    --scrim-2:     rgba(7, 19, 29, .9);
+      --ground:      #0F1113;
+    --surface:     #17191C;
+    --surface-alt: #1E2125;
+    --ink:         #E9ECEF;
+    --ink-soft:    #9CA3AF;
+    --line:        #2A2E33;
+    --brand:       #4D96F5;
+    --cta:         #3B82F6;
+    --brand-weak:  #121C2B;
+    --on-brand:    #FFFFFF;
+    --deep:        #0A0C0E;
+    --deep-ink:    #F1F3F5;
+    --deep-soft:   #A8B2BD;
+    --zap:         #2FBF6B;
+    --on-zap:      #05180D;
+    --shadow:      0 1px 2px rgba(0, 0, 0, .5), 0 8px 24px -16px rgba(0, 0, 0, .8);
+    --scrim-1:     rgba(6, 8, 10, .5);
+    --scrim-2:     rgba(6, 8, 10, .9);
   }
 
   * { box-sizing: border-box; }
@@ -165,8 +159,8 @@
     flex-direction: column;
     justify-content: flex-end;
     padding: 1.75rem 1.5rem 3.5rem;
-    background: var(--brand-deep);
-    color: var(--brand-ink);
+    background: var(--deep);
+    color: var(--deep-ink);
     overflow: hidden;
     isolation: isolate;
   }
@@ -189,7 +183,7 @@
       var(--scrim-1) 0%,
       var(--scrim-1) 22%,
       var(--scrim-2) 56%,
-      var(--brand-deep) 88%);
+      var(--deep) 88%);
   }
 
   .badge {
@@ -197,12 +191,13 @@
     display: inline-flex;
     align-items: center;
     gap: .4rem;
-    background: var(--accent);
-    border: 1px solid var(--accent);
-    color: var(--on-accent);
+    background: rgba(255, 255, 255, .1);
+    border: 1px solid rgba(255, 255, 255, .3);
+    color: #FFFFFF;
     font-size: var(--step--1);
     font-weight: 600;
-    letter-spacing: .08em;
+    letter-spacing: .1em;
+    backdrop-filter: blur(4px);
     text-transform: uppercase;
     padding: .32rem .8rem;
     border-radius: 6px;
@@ -252,7 +247,7 @@
   .id-row .role {
     margin: 0;
     font-size: var(--step--1);
-    color: rgba(234, 241, 247, .8);
+    color: var(--deep-soft);
   }
 
   .id-row .creci-inline {
@@ -260,7 +255,7 @@
     font-size: var(--step--1);
     font-weight: 600;
     letter-spacing: .05em;
-    color: var(--accent);
+    color: var(--brand);
   }
 
   h1 {
@@ -276,7 +271,7 @@
   .destaque {
     position: relative;
     display: inline-block;
-    color: var(--accent);
+    color: var(--brand);
     white-space: nowrap;
   }
 
@@ -288,7 +283,7 @@
     bottom: .04em;
     height: .13em;
     border-radius: 99px;
-    background: var(--accent);
+    background: var(--brand);
     transform: scaleX(0);
     transform-origin: left center;
     transition: transform .8s .4s cubic-bezier(.2, .75, .3, 1);
@@ -303,7 +298,7 @@
   .pitch {
     margin: 0;
     max-width: 34ch;
-    color: rgba(234, 241, 247, .84);
+    color: var(--deep-soft);
   }
 
   .regions {
@@ -320,7 +315,7 @@
     padding: .24rem .65rem;
     border-radius: 5px;
     border: 1px solid rgba(255, 255, 255, .26);
-    color: rgba(234, 241, 247, .92);
+    color: var(--deep-ink);
   }
 
   /* ============ BLOCOS ============ */
@@ -337,7 +332,7 @@
     text-transform: uppercase;
     letter-spacing: .14em;
     font-weight: 600;
-    color: var(--accent-strong);
+    color: var(--brand);
     margin: 0;
   }
 
@@ -488,7 +483,7 @@
     position: relative;
     overflow: hidden;
     isolation: isolate;
-    color: var(--brand-ink);
+    color: var(--deep-ink);
     padding: 2.4rem 1.25rem;
     display: flex;
     flex-direction: column;
@@ -496,11 +491,11 @@
   }
 
   .band .scrim {
-    background: linear-gradient(160deg, rgba(10, 34, 54, .95), rgba(10, 34, 54, .8) 55%, rgba(10, 34, 54, .93));
+    background: linear-gradient(160deg, rgba(16, 20, 24, .94), rgba(16, 20, 24, .82) 55%, rgba(16, 20, 24, .93));
   }
 
-  .band .eyebrow { color: var(--accent); }
-  .band h2 { color: var(--brand-ink); }
+  .band .eyebrow { color: var(--brand); }
+  .band h2 { color: var(--deep-ink); }
 
   .why { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: .9rem; }
 
@@ -512,9 +507,9 @@
     height: 22px;
     margin-top: .2rem;
     border-radius: 4px;
-    background: var(--accent);
-    border: 1px solid var(--accent);
-    color: var(--on-accent);
+    background: var(--brand);
+    border: 1px solid var(--brand);
+    color: var(--on-brand);
     display: grid;
     place-items: center;
   }
@@ -524,11 +519,11 @@
   .why .d {
     display: block;
     font-size: var(--step--1);
-    color: rgba(234, 241, 247, .72);
+    color: var(--deep-soft);
     line-height: 1.5;
   }
 
-  .band-note { margin: 0; font-size: var(--step--1); color: rgba(234, 241, 247, .58); }
+  .band-note { margin: 0; font-size: var(--step--1); color: var(--deep-soft); }
 
   /* ---- passos ---- */
 
@@ -560,8 +555,8 @@
     width: 27px;
     height: 27px;
     border-radius: 6px;
-    background: var(--accent);
-    color: var(--on-accent);
+    background: var(--brand);
+    color: var(--on-brand);
     font-family: "Archivo", system-ui, sans-serif;
     font-weight: 700;
     font-size: .9rem;
@@ -599,7 +594,7 @@
     transition: border-color .18s ease, opacity .18s ease;
   }
 
-  .rail-nav button:hover:not(:disabled) { border-color: var(--accent); }
+  .rail-nav button:hover:not(:disabled) { border-color: var(--brand); }
   .rail-nav button:disabled { opacity: .3; cursor: default; }
 
   .rail {
@@ -656,18 +651,18 @@
   /* ---- galeria em faixa preta ---- */
 
   .gallery {
-    background: #08090B;
-    color: #F2F5F7;
+    background: var(--deep);
+    color: var(--deep-ink);
     padding: 2.5rem 0 1.75rem;
   }
 
-  .gallery .eyebrow { color: var(--accent); }
+  .gallery .eyebrow { color: var(--brand); }
   .gallery h2 { color: #FFFFFF; }
-  .gallery .note { color: rgba(242, 245, 247, .5); }
+  .gallery .note { color: var(--deep-soft); }
 
   .gallery .rail li {
-    background: #14181E;
-    border-color: rgba(255, 255, 255, .12);
+    background: #1A1E23;
+    border-color: rgba(255, 255, 255, .1);
     box-shadow: 0 16px 38px -20px rgba(0, 0, 0, .95);
   }
 
@@ -677,8 +672,8 @@
     color: #FFFFFF;
   }
 
-  .gallery .rail-nav button:hover:not(:disabled) { border-color: var(--accent); }
-  .gallery .rail li:focus-visible { outline-color: var(--accent); }
+  .gallery .rail-nav button:hover:not(:disabled) { border-color: var(--brand); }
+  .gallery .rail li:focus-visible { outline-color: var(--brand); }
 
   /* ---- lightbox ---- */
 
@@ -707,7 +702,7 @@
 
   .lb-count {
     margin: 0;
-    color: rgba(234, 241, 247, .6);
+    color: var(--deep-soft);
     font-size: var(--step--1);
     font-variant-numeric: tabular-nums;
     letter-spacing: .1em;
@@ -737,7 +732,7 @@
   .sim {
     background: var(--surface);
     border: 1px solid var(--line);
-    border-top: 4px solid var(--accent);
+    border-top: 4px solid var(--brand);
     border-radius: 12px;
     padding: 1.25rem;
     box-shadow: var(--shadow);
@@ -755,7 +750,7 @@
     font-weight: 700;
     font-size: var(--step-2);
     letter-spacing: -.03em;
-    color: var(--accent-strong);
+    color: var(--brand);
     font-variant-numeric: tabular-nums;
     white-space: nowrap;
   }
@@ -777,7 +772,7 @@
     width: 28px;
     height: 28px;
     border-radius: 50%;
-    background: var(--accent);
+    background: var(--brand);
     border: 4px solid var(--surface);
     box-shadow: 0 2px 10px rgba(0, 0, 0, .28);
     cursor: grab;
@@ -789,13 +784,13 @@
     width: 22px;
     height: 22px;
     border-radius: 50%;
-    background: var(--accent);
+    background: var(--brand);
     border: 4px solid var(--surface);
     box-shadow: 0 2px 10px rgba(0, 0, 0, .28);
     cursor: grab;
   }
 
-  .sim input[type="range"]:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+  .sim input[type="range"]:focus-visible { outline: 2px solid var(--brand); outline-offset: 4px; }
 
   .sim-escala {
     display: flex;
@@ -810,7 +805,7 @@
     display: flex;
     align-items: center;
     gap: .6rem;
-    background: var(--accent-weak);
+    background: var(--brand-weak);
     border-radius: 9px;
     padding: .75rem .9rem;
   }
@@ -820,8 +815,8 @@
     font-family: "Archivo", system-ui, sans-serif;
     font-weight: 700;
     font-size: var(--step-0);
-    background: var(--accent);
-    color: var(--on-accent);
+    background: var(--brand);
+    color: var(--on-brand);
     padding: .3rem .7rem;
     border-radius: 6px;
   }
@@ -861,8 +856,8 @@
     align-items: center;
     justify-content: center;
     gap: .5rem;
-    background: var(--accent);
-    color: var(--on-accent);
+    background: var(--cta);
+    color: #FFFFFF;
     border-radius: 8px;
     padding: .9rem 1rem;
     font-family: "Archivo", system-ui, sans-serif;
@@ -874,6 +869,139 @@
   }
 
   .btn-accent:hover, .btn-accent:focus-visible { filter: brightness(1.06); transform: translateY(-1px); }
+
+  /* ---- área de atuação no topo ---- */
+
+  .regiao {
+    display: flex;
+    align-items: center;
+    gap: .45rem;
+    margin: .3rem 0 0;
+    font-size: var(--step--1);
+    font-weight: 500;
+    letter-spacing: .01em;
+    color: var(--deep-ink);
+    background: rgba(255, 255, 255, .1);
+    border: 1px solid rgba(255, 255, 255, .22);
+    border-radius: 7px;
+    padding: .4rem .7rem;
+  }
+
+  .regiao svg { flex: none; opacity: .85; }
+
+  /* ---- passo em destaque na jornada ---- */
+
+  .passo-destaque {
+    background: var(--brand-weak);
+    border-color: var(--brand);
+    box-shadow: 0 1px 2px rgba(11, 94, 215, .08), 0 12px 30px -18px rgba(11, 94, 215, .5);
+  }
+
+  .passo-destaque::before {
+    background: var(--cta);
+    color: #FFFFFF;
+  }
+
+  .passo-destaque .selo {
+    display: inline-block;
+    font-size: .68rem;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    font-weight: 700;
+    color: var(--brand);
+    margin-bottom: .3rem;
+  }
+
+  .passo-destaque .t { font-size: var(--step-1); letter-spacing: -.02em; }
+  .passo-destaque .d { color: var(--ink); }
+  .passo-destaque .d + .d { margin-top: .4rem; color: var(--ink-soft); font-weight: 500; }
+
+  /* ---- indicador de faixa do simulador ---- */
+
+  .sim-selo {
+    font-size: .68rem;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    font-weight: 700;
+    color: var(--ink-soft);
+    border: 1px solid var(--line);
+    border-radius: 5px;
+    padding: .2rem .5rem;
+  }
+
+  .sim-valor { font-size: var(--step-3); line-height: 1; color: var(--ink); }
+
+  .sim-trilha {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: .35rem;
+    list-style: none;
+    padding: 0;
+    margin: .1rem 0 .2rem;
+  }
+
+  .sim-trilha li {
+    position: relative;
+    height: 34px;
+    border-radius: 7px;
+    background: var(--surface-alt);
+    border: 1px solid transparent;
+    display: grid;
+    place-items: center;
+    transition: background .25s ease, border-color .25s ease, color .25s ease;
+  }
+
+  .sim-trilha li span {
+    font-family: "Archivo", system-ui, sans-serif;
+    font-weight: 700;
+    font-size: .8rem;
+    color: var(--ink-soft);
+    transition: color .25s ease;
+  }
+
+  .sim-trilha li::after {
+    content: attr(data-faixa);
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .02em;
+    color: #FFFFFF;
+    opacity: 0;
+    transition: opacity .25s ease;
+  }
+
+  .sim-trilha li.passada { background: var(--brand-weak); }
+  .sim-trilha li.passada span { color: var(--brand); }
+
+  .sim-trilha li.ativa { background: var(--cta); border-color: var(--cta); }
+  .sim-trilha li.ativa span { opacity: 0; }
+  .sim-trilha li.ativa::after { opacity: 1; }
+
+  .sim-grid .destaque-sub {
+    background: var(--brand-weak);
+    border: 1px solid rgba(11, 94, 215, .18);
+  }
+
+  .sim-grid .destaque-sub strong { color: var(--brand); font-size: var(--step-1); }
+
+  /* ---- construtoras ---- */
+
+  .rotulo-marcas {
+    margin: .35rem 0 0;
+    font-size: .72rem;
+    text-transform: uppercase;
+    letter-spacing: .11em;
+    font-weight: 700;
+    color: var(--ink-soft);
+  }
+
+  .brands li {
+    border: 1px solid var(--line);
+    background: var(--surface);
+  }
 
   /* ---- perguntas frequentes ---- */
 
@@ -906,8 +1034,8 @@
     flex: none;
     width: 11px;
     height: 11px;
-    border-right: 2.4px solid var(--accent);
-    border-bottom: 2.4px solid var(--accent);
+    border-right: 2.4px solid var(--brand);
+    border-bottom: 2.4px solid var(--brand);
     transform: rotate(45deg) translate(-2px, -2px);
     transition: transform .22s ease;
   }
@@ -940,7 +1068,7 @@
     transition: border-color .18s ease, transform .18s ease;
   }
 
-  .link:hover, .link:focus-visible { border-color: var(--accent); transform: translateY(-1px); }
+  .link:hover, .link:focus-visible { border-color: var(--brand); transform: translateY(-1px); }
 
   .link .icon {
     flex: none;
@@ -1011,7 +1139,7 @@
   /* ---- formulário ---- */
 
   .form-band .scrim {
-    background: linear-gradient(170deg, rgba(10, 34, 54, .93), rgba(10, 34, 54, .97));
+    background: linear-gradient(170deg, rgba(16, 20, 24, .93), rgba(16, 20, 24, .97));
   }
 
   form.lead {
@@ -1160,7 +1288,6 @@
 </head>
 <body>
 <div class="page">
-
   <header class="hero">
     <img class="bg-photo" src="fotos/chave.jpg" alt="Mão segurando a chave de um imóvel na porta de entrada">
     <div class="scrim"></div>
@@ -1184,14 +1311,13 @@
 
       <p class="pitch" data-reveal>
         Especialista em financiamento habitacional pela Caixa Econômica Federal e no
-        programa Minha Casa Minha Vida. Nove anos atendendo famílias em São Paulo.
+        programa Minha Casa Minha Vida. Nove anos atendendo famílias em toda a Região Metropolitana de São Paulo.
       </p>
 
-      <ul class="regions" data-reveal>
-        <li>Grande ABC</li>
-        <li>Zona Leste</li>
-        <li>São Paulo</li>
-      </ul>
+      <p class="regiao" data-reveal>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        Atendimento em toda a Região Metropolitana de São Paulo
+      </p>
     </div>
   </header>
 
@@ -1209,21 +1335,103 @@
     </a>
   </div>
 
+  <section class="stack">
+    <ul class="facts" data-reveal>
+      <li><span class="n" data-count="9" data-suf="+">0</span><span class="l">anos de mercado</span></li>
+      <li><span class="n" data-count="8,5" data-suf="&nbsp;mil">0</span><span class="l">seguidores acompanhando</span></li>
+      <li><span class="n" data-count="39" data-suf="">0</span><span class="l">cidades na Região Metropolitana</span></li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="stack rail-head" data-reveal>
+      <div class="sec-head">
+        <p class="eyebrow">Padrão de entrega</p>
+        <h2>O que dá pra conquistar</h2>
+      </div>
+      <div class="rail-nav">
+        <button type="button" data-rail="rail-imoveis" data-dir="-1" aria-label="Foto anterior">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 6-6 6 6 6"/></svg>
+        </button>
+        <button type="button" data-rail="rail-imoveis" data-dir="1" aria-label="Próxima foto">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <ul class="rail" id="rail-imoveis" data-reveal>
+      <li tabindex="0">
+        <figure style="margin:0">
+          <img src="fotos/sala.jpg" alt="Sala de estar integrada com a cozinha em um apartamento" loading="lazy">
+          <figcaption>Sala integrada<span>Apartamentos de 2 dormitórios</span></figcaption>
+        </figure>
+      </li>
+      <li tabindex="0">
+        <figure style="margin:0">
+          <img src="fotos/cozinha.jpg" alt="Cozinha clara com armários planejados e bancada" loading="lazy">
+          <figcaption>Cozinha pronta<span>Entrega com acabamento</span></figcaption>
+        </figure>
+      </li>
+      <li tabindex="0">
+        <figure style="margin:0">
+          <img src="fotos/predio.jpg" alt="Fachada de um prédio residencial ao fim da tarde" loading="lazy">
+          <figcaption>Condomínio fechado<span>Perto de comércio e transporte</span></figcaption>
+        </figure>
+      </li>
+    </ul>
+
+    <p class="note" style="padding:0 1.25rem" data-reveal>Imagens ilustrativas.</p>
+  </section>
+
+  <section class="stack">
+    <div class="card" data-reveal>
+      <p class="eyebrow">Empreendimentos</p>
+      <h2>Imóveis de várias construtoras, não de uma só</h2>
+      <p>
+        Sou corretora autônoma e intermedeio a venda de empreendimentos de diferentes
+        construtoras. Isso quer dizer que eu não preciso te empurrar o imóvel de uma
+        marca específica: eu procuro no mercado inteiro e apresento o que encaixa na sua
+        renda e na região onde você quer morar.
+      </p>
+      <p class="rotulo-marcas">Construtoras cujos empreendimentos já trabalhei</p>
+      <ul class="brands">
+        <li>Cury</li>
+        <li>MRV</li>
+        <li>Plano&amp;Plano</li>
+        <li>Direcional</li>
+        <li>Vivaz</li>
+        <li>Tenda</li>
+        <li>Sousa Araújo</li>
+        <li>Diálogo</li>
+        <li class="mais">entre outras</li>
+      </ul>
+    </div>
+  </section>
+
   <section class="stack" id="simulador">
     <div class="sec-head" data-reveal>
-      <p class="eyebrow">Simulador</p>
-      <h2>Descubra a sua faixa em 5 segundos</h2>
+      <p class="eyebrow">Possibilidades</p>
+      <h2>Descubra a sua faixa agora</h2>
     </div>
 
     <div class="sim" data-reveal>
       <div class="sim-top">
         <label for="renda-sim">Renda familiar bruta por mês</label>
-        <span class="sim-valor" id="sim-valor">R$ 3.000</span>
+        <span class="sim-selo">Estimativa</span>
       </div>
+
+      <span class="sim-valor" id="sim-valor">R$ 3.000</span>
 
       <input type="range" id="renda-sim" min="1000" max="15000" step="100" value="3000"
              aria-label="Renda familiar bruta por mês">
       <div class="sim-escala"><span>R$ 1.000</span><span>R$ 15.000</span></div>
+
+      <ol class="sim-trilha" id="sim-trilha" aria-hidden="true">
+        <li data-faixa="Faixa 1"><span>1</span></li>
+        <li data-faixa="Faixa 2"><span>2</span></li>
+        <li data-faixa="Faixa 3"><span>3</span></li>
+        <li data-faixa="Faixa 4"><span>4</span></li>
+      </ol>
 
       <div class="sim-faixa">
         <span class="tag" id="sim-tag">Faixa 1</span>
@@ -1231,51 +1439,29 @@
       </div>
 
       <div class="sim-grid">
-        <div><span class="k">Subsídio</span><strong id="sim-sub">até R$ 55 mil</strong></div>
-        <div><span class="k">Imóvel até</span><strong id="sim-teto">R$ 275 mil</strong></div>
+        <div class="destaque-sub">
+          <span class="k">Subsídio estimado</span>
+          <strong id="sim-sub">até R$ 55 mil</strong>
+        </div>
+        <div class="destaque-sub">
+          <span class="k">Potencial de compra</span>
+          <strong id="sim-teto">R$ 275 mil</strong>
+        </div>
         <div><span class="k">Juros ao ano</span><strong id="sim-juros">a partir de 4%</strong></div>
         <div><span class="k">Entrada</span><strong id="sim-entrada">reduzida pelo subsídio</strong></div>
       </div>
 
       <a class="btn-accent" id="sim-cta" href="https://wa.me/5511988097416" target="_blank" rel="noopener">
-        Confirmar com a Isa
+        Quero conhecer os imóveis dessa faixa
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13"/><path d="m12 5 7 7-7 7"/></svg>
       </a>
 
-      <p class="note">Estimativa pelas regras do programa em 2026. O valor exato sai na análise da Caixa Econômica Federal.</p>
+      <p class="note">
+        Números baseados nas regras públicas do programa. Isto é uma estimativa para
+        você se situar, não é simulação oficial nem aprovação de crédito da Caixa
+        Econômica Federal. O valor real sai na análise, depois da visita.
+      </p>
     </div>
-  </section>
-
-  <section class="stack">
-    <div class="sec-head" data-reveal>
-      <p class="eyebrow">Área de atuação</p>
-      <h2>Financiamento habitacional e programa federal</h2>
-    </div>
-
-    <ul class="creds" data-reveal>
-      <li>
-        <span class="logo-slot">
-          <b>Caixa<br>Econômica Federal</b>
-          <img class="logo-real" src="logos/caixa.png" alt="Caixa Econômica Federal">
-        </span>
-        <span class="cred-label">Financiamento habitacional e uso do FGTS</span>
-      </li>
-      <li>
-        <span class="logo-slot">
-          <b>Minha Casa<br>Minha Vida</b>
-          <img class="logo-real" src="logos/mcmv.png" alt="Minha Casa Minha Vida">
-        </span>
-        <span class="cred-label">Subsídio do governo federal por faixa de renda</span>
-      </li>
-    </ul>
-  </section>
-
-  <section class="stack">
-    <ul class="facts" data-reveal>
-      <li><span class="n" data-count="9" data-suf="+">0</span><span class="l">anos de mercado</span></li>
-      <li><span class="n" data-count="8,5" data-suf="&nbsp;mil">0</span><span class="l">seguidores acompanhando</span></li>
-      <li><span class="n" data-count="3" data-suf="">0</span><span class="l">regiões atendidas</span></li>
-    </ul>
   </section>
 
   <section class="gallery">
@@ -1313,6 +1499,42 @@
     </ul>
 
     <p class="note" style="padding:0 1.25rem" data-reveal>Publicações do Instagram da Isa, com autorização dos clientes.</p>
+  </section>
+
+  <section class="stack">
+    <div class="sec-head" data-reveal>
+      <p class="eyebrow">A jornada</p>
+      <h2>Do primeiro contato até a chave</h2>
+    </div>
+
+    <ol class="steps">
+      <li data-reveal>
+        <span>
+          <span class="t">Conversa no WhatsApp</span>
+          <span class="d">Você me conta o que procura, onde quer morar e qual a sua renda. Eu entendo o seu momento antes de mostrar qualquer coisa.</span>
+        </span>
+      </li>
+      <li class="passo-destaque" data-reveal>
+        <span>
+          <span class="selo">O passo que muda tudo</span>
+          <span class="t">Visita ao empreendimento</span>
+          <span class="d">Aqui eu não mando lista de imóvel por mensagem. Eu marco, vou junto e te levo para conhecer o apartamento decorado, a planta, a área comum e a vizinhança. Ver de perto é o que faz a pessoa decidir com segurança, e é onde a maioria descobre que o sonho cabe no bolso.</span>
+          <span class="d">Sem compromisso e sem custo nenhum.</span>
+        </span>
+      </li>
+      <li data-reveal>
+        <span>
+          <span class="t">Análise de crédito</span>
+          <span class="d">Com o imóvel escolhido, eu monto a sua documentação e levo para o banco. É aqui que sai a sua faixa, o subsídio e a parcela real.</span>
+        </span>
+      </li>
+      <li data-reveal>
+        <span>
+          <span class="t">Escolha e compra</span>
+          <span class="d">Aprovado o crédito, fechamos a unidade, assino o contrato com você e acompanho o processo até a entrega da chave.</span>
+        </span>
+      </li>
+    </ol>
   </section>
 
   <section class="band">
@@ -1363,100 +1585,51 @@
       </li>
     </ul>
 
-    <p class="band-note" data-reveal>Corretora registrada no CRECI-SP 195.448.</p>
+    <p class="band-note" data-reveal>Corretora registrada no CRECI-SP 195.448. Atendimento em toda a Região Metropolitana de São Paulo.</p>
   </section>
 
   <section class="stack">
     <div class="sec-head" data-reveal>
-      <p class="eyebrow">Como funciona</p>
-      <h2>Quatro passos até a chave</h2>
+      <p class="eyebrow">Área de atuação</p>
+      <h2>Financiamento habitacional e programa federal</h2>
     </div>
 
-    <ol class="steps">
-      <li data-reveal>
-        <span>
-          <span class="t">Conversa inicial no WhatsApp</span>
-          <span class="d">Você informa sua renda e a região onde quer morar. Leva cinco minutos e não tem custo.</span>
+    <ul class="creds" data-reveal>
+      <li>
+        <span class="logo-slot">
+          <b>Caixa<br>Econômica Federal</b>
+          <img class="logo-real" src="logos/caixa.png" alt="Caixa Econômica Federal">
         </span>
+        <span class="cred-label">Financiamento habitacional e uso do FGTS</span>
       </li>
-      <li data-reveal>
-        <span>
-          <span class="t">Análise de crédito e subsídio</span>
-          <span class="d">Identifico em qual faixa do programa você entra e quanto o governo abate da sua entrada.</span>
+      <li>
+        <span class="logo-slot">
+          <b>Minha Casa<br>Minha Vida</b>
+          <img class="logo-real" src="logos/mcmv.png" alt="Minha Casa Minha Vida">
         </span>
+        <span class="cred-label">Subsídio do governo federal por faixa de renda</span>
       </li>
-      <li data-reveal>
-        <span>
-          <span class="t">Seleção de imóveis e visita</span>
-          <span class="d">Apresento apenas o que cabe no seu orçamento e no que o banco aprova, sem visita desnecessária.</span>
-        </span>
-      </li>
-      <li data-reveal>
-        <span>
-          <span class="t">Assinatura e entrega da chave</span>
-          <span class="d">Cuido da documentação e acompanho o processo na Caixa Econômica Federal até a entrega.</span>
-        </span>
-      </li>
-    </ol>
+    </ul>
   </section>
 
   <section class="stack">
     <div class="card" data-reveal>
-      <p class="eyebrow">Parceiros</p>
-      <h2>Trabalho com as construtoras de São Paulo</h2>
+      <p class="eyebrow">Perfis atendidos</p>
+      <h2>Renda de aplicativo também financia</h2>
       <p>
-        Não fico presa a um único empreendimento. Busco entre as construtoras que atuam
-        no Grande ABC, na Zona Leste e na capital, e apresento o que faz sentido para a
-        sua renda.
+        Renda informal não impede a aprovação. Monto a documentação adequada para quem
+        trabalha por aplicativo e conduzo o financiamento até a assinatura.
       </p>
-      <ul class="brands">
-        <li>MRV</li>
-        <li>Cury</li>
-        <li>Direcional</li>
-        <li>Sousa Araujo</li>
-        <li class="mais">entre outras</li>
+      <ul class="tags">
+        <li>Uber</li>
+        <li>99</li>
+        <li>iFood</li>
+        <li>Keeta</li>
+        <li>Autônomo</li>
+        <li>MEI</li>
+        <li>CLT</li>
       </ul>
     </div>
-  </section>
-
-  <section>
-    <div class="stack rail-head" data-reveal>
-      <div class="sec-head">
-        <p class="eyebrow">Padrão de entrega</p>
-        <h2>O que dá pra conquistar</h2>
-      </div>
-      <div class="rail-nav">
-        <button type="button" data-rail="rail-imoveis" data-dir="-1" aria-label="Foto anterior">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 6-6 6 6 6"/></svg>
-        </button>
-        <button type="button" data-rail="rail-imoveis" data-dir="1" aria-label="Próxima foto">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>
-        </button>
-      </div>
-    </div>
-
-    <ul class="rail" id="rail-imoveis" data-reveal>
-      <li tabindex="0">
-        <figure style="margin:0">
-          <img src="fotos/sala.jpg" alt="Sala de estar integrada com a cozinha em um apartamento" loading="lazy">
-          <figcaption>Sala integrada<span>Apartamentos de 2 dormitórios</span></figcaption>
-        </figure>
-      </li>
-      <li tabindex="0">
-        <figure style="margin:0">
-          <img src="fotos/cozinha.jpg" alt="Cozinha clara com armários planejados e bancada" loading="lazy">
-          <figcaption>Cozinha pronta<span>Entrega com acabamento</span></figcaption>
-        </figure>
-      </li>
-      <li tabindex="0">
-        <figure style="margin:0">
-          <img src="fotos/predio.jpg" alt="Fachada de um prédio residencial ao fim da tarde" loading="lazy">
-          <figcaption>Condomínio fechado<span>Perto de comércio e transporte</span></figcaption>
-        </figure>
-      </li>
-    </ul>
-
-    <p class="note" style="padding:0 1.25rem" data-reveal>Imagens ilustrativas.</p>
   </section>
 
   <section class="stack">
@@ -1484,7 +1657,7 @@
         </span>
         <span class="txt">
           <span class="t">Ver imóveis disponíveis</span>
-          <span class="d">Lançamentos e prontos no ABC e Zona Leste</span>
+          <span class="d">Lançamentos e prontos na Grande São Paulo</span>
         </span>
         <span class="chev" aria-hidden="true">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>
@@ -1517,26 +1690,6 @@
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>
         </span>
       </a>
-    </div>
-  </section>
-
-  <section class="stack">
-    <div class="card" data-reveal>
-      <p class="eyebrow">Perfis atendidos</p>
-      <h2>Renda de aplicativo também financia</h2>
-      <p>
-        Renda informal não impede a aprovação. Monto a documentação adequada para quem
-        trabalha por aplicativo e conduzo o financiamento até a assinatura.
-      </p>
-      <ul class="tags">
-        <li>Uber</li>
-        <li>99</li>
-        <li>iFood</li>
-        <li>Keeta</li>
-        <li>Autônomo</li>
-        <li>MEI</li>
-        <li>CLT</li>
-      </ul>
     </div>
   </section>
 
@@ -1574,7 +1727,7 @@
 
       <details class="faq">
         <summary>Em quais regiões você atende?</summary>
-        <p>Grande ABC, Zona Leste de São Paulo e demais regiões da capital. Busco entre as construtoras que atuam nessas praças e apresento o que cabe no seu orçamento.</p>
+        <p>Atendo toda a Região Metropolitana de São Paulo, da capital ao Grande ABC, Guarulhos, Osasco e as demais cidades. Busco entre as construtoras que atuam na sua região e apresento o que cabe no seu orçamento.</p>
       </details>
     </div>
   </section>
@@ -1606,9 +1759,10 @@
       <div class="field">
         <label for="regiao">Região de interesse</label>
         <select id="regiao" name="regiao">
+          <option>Capital</option>
           <option>Grande ABC</option>
-          <option>Zona Leste de São Paulo</option>
-          <option>Outra região de São Paulo</option>
+          <option>Zona Leste</option>
+          <option>Guarulhos, Osasco ou outra cidade da região</option>
           <option>Ainda estou decidindo</option>
         </select>
       </div>
@@ -1911,6 +2065,7 @@
       var elJuros = document.getElementById("sim-juros");
       var elEntrada = document.getElementById("sim-entrada");
       var simCta = document.getElementById("sim-cta");
+      var trilha = document.querySelectorAll("#sim-trilha li");
 
       function reais(v) {
         return "R$ " + v.toLocaleString("pt-BR");
@@ -1930,12 +2085,18 @@
 
         var pct = (v - range.min) / (range.max - range.min) * 100;
         range.style.background =
-          "linear-gradient(to right, var(--accent) " + pct + "%, var(--surface-alt) " + pct + "%)";
+          "linear-gradient(to right, var(--cta) " + pct + "%, var(--surface-alt) " + pct + "%)";
+
+        var idx = FAIXAS.indexOf(f);
+        Array.prototype.forEach.call(trilha, function (li, k) {
+          li.classList.toggle("ativa", k === idx);
+          li.classList.toggle("passada", k < idx);
+        });
 
         var msg = "Oi Isabella! Simulei no seu site.\n\n" +
           "Renda familiar: " + reais(v) + "\n" +
           "Resultado: " + f.nome + "\n\n" +
-          "Quero confirmar se tenho direito ao subsídio.";
+          "Quero conhecer os imóveis dessa faixa e agendar uma visita.";
         simCta.href = "https://wa.me/" + PHONE + "?text=" + encodeURIComponent(msg);
       }
 
