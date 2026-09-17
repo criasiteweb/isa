@@ -56,24 +56,23 @@
 
 <style>
   :root {
-    --ground:      #FAF9F7;
+    --ground:      #F7F5F1;
     --surface:     #FFFFFF;
-    --surface-alt: #F2F1EC;
-    --ink:         #1A1A17;
-    --ink-soft:    #6F6C64;
-    --line:        #E5E3DC;
-    --brand:       #55684C;
-    --cta:         #1A1A17;
-    --brand-weak:  #EDF0E8;
+    --surface-alt: #F0EDE7;
+    --ink:         #202124;
+    --ink-soft:    #667085;
+    --line:        #E6E2DA;
+    --brand:       #102A43;
+    --cta:         #176B87;
+    --brand-weak:  #E9F1F4;
     --on-brand:    #FFFFFF;
-    --deep:        #1B1D19;
-    --deep-ink:    #F2F1EC;
-    --deep-soft:   #A9AAA0;
+    --deep:        #102A43;
+    --deep-ink:    #F7F5F1;
+    --deep-soft:   #AFBECB;
     --zap:         #25D366;
-    --on-zap:      #FFFFFF;
-    --shadow:      0 1px 1px rgba(26, 26, 23, .03), 0 6px 20px -14px rgba(26, 26, 23, .22);
-    --scrim-1:     rgba(20, 22, 18, .34);
-    --scrim-2:     rgba(20, 22, 18, .86);
+    --shadow:      0 1px 1px rgba(16, 42, 67, .03), 0 8px 24px -18px rgba(16, 42, 67, .28);
+    --scrim-1:     rgba(16, 42, 67, .30);
+    --scrim-2:     rgba(16, 42, 67, .88);
 
     --step--1: clamp(.79rem, .77rem + .1vw, .84rem);
     --step-0:  clamp(.98rem, .95rem + .15vw, 1.05rem);
@@ -84,46 +83,44 @@
 
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
-      --ground:      #121310;
-      --surface:     #1A1B18;
-      --surface-alt: #22241F;
-      --ink:         #ECEBE5;
-      --ink-soft:    #9C9A92;
-      --line:        #2C2E28;
-      --brand:       #A3B795;
-      --cta:         #ECEBE5;
-      --brand-weak:  #1F241C;
-      --on-brand:    #15170F;
-      --deep:        #0E0F0D;
-      --deep-ink:    #F2F1EC;
-      --deep-soft:   #A9AAA0;
+      --ground:      #14161A;
+      --surface:     #1B1E23;
+      --surface-alt: #23272E;
+      --ink:         #EAECEF;
+      --ink-soft:    #9AA4B2;
+      --line:        #2C313A;
+      --brand:       #9CC2D8;
+      --cta:         #3E9DBC;
+      --brand-weak:  #17262E;
+      --on-brand:    #08181F;
+      --deep:        #0C1C2B;
+      --deep-ink:    #F0F2F4;
+      --deep-soft:   #AFBECB;
       --zap:         #3BE07C;
-      --on-zap:      #0B1A10;
-      --shadow:      0 1px 1px rgba(0, 0, 0, .4), 0 6px 20px -14px rgba(0, 0, 0, .8);
-      --scrim-1:     rgba(8, 9, 7, .48);
-      --scrim-2:     rgba(8, 9, 7, .9);
+      --shadow:      0 1px 1px rgba(0, 0, 0, .35), 0 8px 24px -18px rgba(0, 0, 0, .75);
+      --scrim-1:     rgba(6, 14, 22, .42);
+      --scrim-2:     rgba(6, 14, 22, .9);
     }
   }
 
   :root[data-theme="dark"] {
-        --ground:      #121310;
-    --surface:     #1A1B18;
-    --surface-alt: #22241F;
-    --ink:         #ECEBE5;
-    --ink-soft:    #9C9A92;
-    --line:        #2C2E28;
-    --brand:       #A3B795;
-    --cta:         #ECEBE5;
-    --brand-weak:  #1F241C;
-    --on-brand:    #15170F;
-    --deep:        #0E0F0D;
-    --deep-ink:    #F2F1EC;
-    --deep-soft:   #A9AAA0;
+          --ground:      #14161A;
+    --surface:     #1B1E23;
+    --surface-alt: #23272E;
+    --ink:         #EAECEF;
+    --ink-soft:    #9AA4B2;
+    --line:        #2C313A;
+    --brand:       #9CC2D8;
+    --cta:         #3E9DBC;
+    --brand-weak:  #17262E;
+    --on-brand:    #08181F;
+    --deep:        #0C1C2B;
+    --deep-ink:    #F0F2F4;
+    --deep-soft:   #AFBECB;
     --zap:         #3BE07C;
-    --on-zap:      #0B1A10;
-    --shadow:      0 1px 1px rgba(0, 0, 0, .4), 0 6px 20px -14px rgba(0, 0, 0, .8);
-    --scrim-1:     rgba(8, 9, 7, .48);
-    --scrim-2:     rgba(8, 9, 7, .9);
+    --shadow:      0 1px 1px rgba(0, 0, 0, .35), 0 8px 24px -18px rgba(0, 0, 0, .75);
+    --scrim-1:     rgba(6, 14, 22, .42);
+    --scrim-2:     rgba(6, 14, 22, .9);
   }
 
   * { box-sizing: border-box; }
@@ -180,11 +177,12 @@
   .scrim { position: absolute; inset: 0; z-index: -1; }
 
   .hero .scrim {
-    background: linear-gradient(to bottom,
-      var(--scrim-1) 0%,
-      var(--scrim-1) 22%,
-      var(--scrim-2) 56%,
-      var(--deep) 88%);
+    background:
+      linear-gradient(to bottom,
+        rgba(16, 42, 67, .18) 0%,
+        rgba(16, 42, 67, .34) 28%,
+        var(--scrim-2) 62%,
+        var(--deep) 92%);
   }
 
   .badge {
@@ -212,13 +210,11 @@
     gap: .8rem;
   }
 
-  .id-row { display: flex; align-items: center; gap: .9rem; }
-
   .avatar {
     position: relative;
     flex: none;
-    width: 76px;
-    height: 76px;
+    width: 46px;
+    height: 46px;
     border-radius: 50%;
     display: grid;
     place-items: center;
@@ -226,38 +222,13 @@
     color: #FFFFFF;
     font-family: "Instrument Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     font-weight: 700;
-    font-size: 1.45rem;
+    font-size: .95rem;
     letter-spacing: -.02em;
-    box-shadow: 0 0 0 2px rgba(255, 255, 255, .45);
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, .35);
     overflow: hidden;
   }
 
   .avatar img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-
-  .id-row .meta { display: flex; flex-direction: column; }
-
-  .id-row .nome {
-    margin: 0;
-    font-family: "Instrument Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    font-weight: 700;
-    font-size: var(--step-1);
-    letter-spacing: -.015em;
-    color: #FFFFFF;
-  }
-
-  .id-row .role {
-    margin: 0;
-    font-size: var(--step--1);
-    color: var(--deep-soft);
-  }
-
-  .id-row .creci-inline {
-    margin: 0;
-    font-size: var(--step--1);
-    font-weight: 600;
-    letter-spacing: .05em;
-    color: var(--brand);
-  }
 
   h1 {
     font-family: "Instrument Serif", "Iowan Old Style", Georgia, serif;
@@ -266,6 +237,7 @@
     line-height: 1.02;
     letter-spacing: -.02em;
     margin: 0;
+    color: var(--brand);
     text-wrap: balance;
   }
 
@@ -276,7 +248,7 @@
     white-space: nowrap;
   }
 
-  .destaque::after {
+  .destaque::after { /* traço do título */
     content: "";
     position: absolute;
     left: -.04em;
@@ -302,22 +274,6 @@
     color: var(--deep-soft);
   }
 
-  .regions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: .35rem;
-    list-style: none;
-    padding: 0;
-    margin: .2rem 0 0;
-  }
-
-  .regions li {
-    font-size: var(--step--1);
-    padding: .24rem .65rem;
-    border-radius: 5px;
-    border: 1px solid rgba(255, 255, 255, .26);
-    color: var(--deep-ink);
-  }
 
   /* ============ BLOCOS ============ */
 
@@ -333,7 +289,7 @@
     text-transform: uppercase;
     letter-spacing: .14em;
     font-weight: 600;
-    color: var(--brand);
+    color: var(--cta);
     margin: 0;
   }
 
@@ -344,43 +300,76 @@
     letter-spacing: -.015em;
     line-height: 1.14;
     margin: 0;
+    color: var(--brand);
     text-wrap: balance;
   }
 
   .sec-head { display: flex; flex-direction: column; gap: .3rem; }
 
-  /* ---- CTA WhatsApp ---- */
+  /* ---- topo: rótulo, CTA único e assinatura ---- */
 
-  .cta-zap {
-    margin-top: -3.2rem;
-    position: relative;
-    z-index: 2;
-    display: flex;
+  .hero { min-height: 640px; padding: 1.5rem 1.5rem 2.5rem; }
+  .hero h1 { color: #FFFFFF; }
+
+  .hero-topo { display: flex; justify-content: flex-start; margin-bottom: auto; }
+
+  .hero-rotulo {
+    margin: 0 0 .1rem;
+    font-size: .74rem;
+    text-transform: uppercase;
+    letter-spacing: .16em;
+    font-weight: 600;
+    color: rgba(255, 255, 255, .72);
+  }
+
+  .hero-cta {
+    display: inline-flex;
     align-items: center;
-    gap: .85rem;
+    justify-content: center;
+    gap: .6rem;
+    align-self: stretch;
+    margin-top: .5rem;
     background: var(--cta);
-    color: var(--on-brand);
+    color: #FFFFFF;
     text-decoration: none;
-    padding: 1rem 1.15rem;
-    border-radius: 10px;
-    box-shadow: var(--shadow);
+    padding: .95rem 1.25rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: var(--step-1);
+    letter-spacing: -.005em;
+    box-shadow: 0 10px 26px -14px rgba(0, 0, 0, .8);
     transition: transform .18s ease, filter .18s ease;
   }
 
-  .cta-zap:hover, .cta-zap:focus-visible { transform: translateY(-2px); filter: brightness(1.05); }
-  .cta-zap:active { transform: translateY(0); }
-  .cta-zap svg { flex: none; color: var(--zap); }
+  .hero-cta:hover, .hero-cta:focus-visible { transform: translateY(-2px); filter: brightness(1.08); }
+  .hero-cta:active { transform: translateY(0); }
+  .hero-cta svg { flex: none; }
 
-  .cta-zap .label {
-    display: block;
-    font-family: "Instrument Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    font-weight: 700;
-    font-size: var(--step-1);
-    letter-spacing: -.018em;
-    line-height: 1.15;
+  .assinatura {
+    display: flex;
+    align-items: center;
+    gap: .7rem;
+    margin-top: 1.1rem;
+    padding-top: 1.1rem;
+    border-top: 1px solid rgba(255, 255, 255, .16);
+    align-self: stretch;
   }
 
-  .cta-zap .sub { display: block; font-size: var(--step--1); opacity: .82; }
+  .assinatura .meta { display: flex; flex-direction: column; }
+
+  .assinatura .nome {
+    margin: 0;
+    font-weight: 600;
+    font-size: var(--step-0);
+    letter-spacing: -.01em;
+    color: #FFFFFF;
+  }
+
+  .assinatura .role {
+    margin: 0;
+    font-size: var(--step--1);
+    color: var(--deep-soft);
+  }
 
   /* ---- credenciais ---- */
 
@@ -508,9 +497,9 @@
     height: 22px;
     margin-top: .2rem;
     border-radius: 4px;
-    background: var(--brand);
-    border: 1px solid var(--brand);
-    color: var(--on-brand);
+    background: var(--cta);
+    border: 1px solid var(--cta);
+    color: #FFFFFF;
     display: grid;
     place-items: center;
   }
@@ -556,8 +545,8 @@
     width: 27px;
     height: 27px;
     border-radius: 6px;
-    background: var(--brand);
-    color: var(--on-brand);
+    background: var(--cta);
+    color: #FFFFFF;
     font-family: "Instrument Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     font-weight: 700;
     font-size: .9rem;
@@ -595,7 +584,7 @@
     transition: border-color .18s ease, opacity .18s ease;
   }
 
-  .rail-nav button:hover:not(:disabled) { border-color: var(--brand); }
+  .rail-nav button:hover:not(:disabled) { border-color: var(--cta); }
   .rail-nav button:disabled { opacity: .3; cursor: default; }
 
   .rail {
@@ -662,7 +651,7 @@
   .gallery .note { color: var(--deep-soft); }
 
   .gallery .rail li {
-    background: #24261F;
+    background: #16324C;
     border-color: rgba(255, 255, 255, .09);
     box-shadow: 0 16px 38px -20px rgba(0, 0, 0, .95);
   }
@@ -947,24 +936,6 @@
 
   .btn-accent:hover, .btn-accent:focus-visible { filter: brightness(1.06); transform: translateY(-1px); }
 
-  /* ---- área de atuação no topo ---- */
-
-  .regiao {
-    display: flex;
-    align-items: center;
-    gap: .45rem;
-    margin: .3rem 0 0;
-    font-size: var(--step--1);
-    font-weight: 500;
-    letter-spacing: .01em;
-    color: var(--deep-ink);
-    background: rgba(255, 255, 255, .1);
-    border: 1px solid rgba(255, 255, 255, .22);
-    border-radius: 7px;
-    padding: .4rem .7rem;
-  }
-
-  .regiao svg { flex: none; opacity: .85; }
 
   /* ---- passo em destaque na jornada ---- */
 
@@ -1051,7 +1022,7 @@
   }
 
   .sim-trilha li.passada { background: var(--brand-weak); }
-  .sim-trilha li.passada span { color: var(--brand); }
+  .sim-trilha li.passada span { color: var(--cta); }
 
   .sim-trilha li.ativa { background: var(--cta); border-color: var(--cta); }
   .sim-trilha li.ativa span { opacity: 0; }
@@ -1063,6 +1034,7 @@
   }
 
   .sim-grid .destaque-sub strong { color: var(--brand); font-size: var(--step-1); }
+  .sim-valor { color: var(--brand); }
 
   /* ---- construtoras ---- */
 
@@ -1075,7 +1047,7 @@
     color: var(--ink-soft);
   }
 
-  .brands li {
+  .brands li { color: var(--brand);
     border: 1px solid var(--line);
     background: var(--surface);
   }
@@ -1145,15 +1117,15 @@
     transition: border-color .18s ease, transform .18s ease;
   }
 
-  .link:hover, .link:focus-visible { border-color: var(--brand); transform: translateY(-1px); }
+  .link:hover, .link:focus-visible { border-color: var(--cta); transform: translateY(-1px); }
 
   .link .icon {
     flex: none;
     width: 38px;
     height: 38px;
     border-radius: 8px;
-    background: var(--surface-alt);
-    color: var(--brand);
+    background: var(--brand-weak);
+    color: var(--cta);
     display: grid;
     place-items: center;
   }
@@ -1268,7 +1240,7 @@
     justify-content: center;
     gap: .5rem;
     background: var(--cta);
-    color: var(--on-brand);
+    color: #FFFFFF;
     border-radius: 8px;
     padding: .9rem 1rem;
     font-family: "Instrument Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -1368,51 +1340,46 @@
 <body>
 <div class="page">
   <header class="hero">
-    <picture><source type="image/webp" srcset="fotos/chave.webp"><img class="bg-photo" src="fotos/chave.jpg" alt="Mão segurando a chave de um imóvel na porta de entrada" fetchpriority="high" decoding="async"></picture>
+    <picture>
+      <source type="image/webp" srcset="fotos/hero-560.webp 560w, fotos/hero.webp 1000w" sizes="(max-width: 520px) 100vw, 480px">
+      <img class="bg-photo" src="fotos/hero.jpg" alt="Empreendimento residencial contemporâneo com jardim e redário" fetchpriority="high" decoding="async">
+    </picture>
     <div class="scrim"></div>
 
-    <span class="badge" data-reveal>CRECI-SP 195.448</span>
+    <div class="hero-topo" data-reveal>
+      <span class="badge">CRECI-SP 195.448</span>
+    </div>
 
     <div class="hero-body">
-      <div class="id-row" data-reveal>
+      <p class="hero-rotulo" data-reveal>Minha Casa Minha Vida &middot; Caixa Econômica Federal</p>
+
+      <h1 data-reveal>Saia do aluguel<br><span class="destaque">ainda este ano</span>.</h1>
+
+      <p class="pitch" data-reveal>
+        Atendimento de corretora, não de portal. Eu entendo o seu momento, te levo para
+        conhecer o imóvel e cuido do financiamento até a chave.
+      </p>
+
+      <a class="hero-cta" data-reveal href="https://wa.me/5511988097416?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Isabela%20Carvalho%20Im%C3%B3veis%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener">
+        <svg width="21" height="21" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M12.04 2c-5.46 0-9.9 4.44-9.9 9.9 0 1.75.46 3.45 1.32 4.95L2 22l5.3-1.38a9.87 9.87 0 0 0 4.74 1.2h.01c5.46 0 9.9-4.44 9.9-9.9 0-2.64-1.03-5.13-2.9-7A9.82 9.82 0 0 0 12.04 2Zm0 1.82c2.15 0 4.17.84 5.7 2.36a8.02 8.02 0 0 1 2.37 5.72c0 4.45-3.62 8.07-8.07 8.07a8.2 8.2 0 0 1-4.18-1.14l-.3-.18-3.1.81.83-3.03-.2-.31a8.03 8.03 0 0 1-1.23-4.3c0-4.45 3.62-8.07 8.08-8.07Zm-3.1 4.1c-.15 0-.4.06-.6.28-.21.22-.8.78-.8 1.9 0 1.12.82 2.2.93 2.36.12.15 1.6 2.44 3.88 3.42.54.23.96.37 1.29.48.54.17 1.03.15 1.42.09.43-.07 1.34-.55 1.53-1.08.19-.53.19-.98.13-1.08-.06-.09-.21-.15-.44-.26-.22-.11-1.33-.66-1.54-.73-.2-.08-.36-.11-.5.1-.16.23-.58.74-.71.89-.13.15-.26.17-.49.06-.22-.11-.95-.35-1.8-1.12a6.75 6.75 0 0 1-1.25-1.55c-.13-.22-.01-.34.1-.45.1-.1.22-.26.33-.39.11-.13.15-.22.22-.37.08-.15.04-.28-.02-.39-.06-.11-.5-1.22-.69-1.67-.18-.44-.36-.38-.5-.38l-.29-.01Z"/>
+        </svg>
+        Falar com a Isabella
+      </a>
+
+      <div class="assinatura" data-reveal>
         <div class="avatar">
           <span>IC</span>
           <picture><source type="image/webp" srcset="fotos/isa.webp"><img id="foto-isa" src="fotos/isa.jpg" alt="Isabella Carvalho, corretora de imóveis" width="512" height="512"></picture>
         </div>
         <div class="meta">
           <p class="nome">Isabella Carvalho</p>
-          <p class="role">Corretora de imóveis</p>
-          <p class="creci-inline">@isacarvalhoimoveis</p>
+          <p class="role">Corretora &middot; Região Metropolitana de São Paulo</p>
         </div>
       </div>
-
-      <h1 data-reveal>Saia do aluguel<br><span class="destaque">ainda este ano</span>.</h1>
-
-      <p class="pitch" data-reveal>
-        Especialista em financiamento habitacional pela Caixa Econômica Federal e no
-        programa Minha Casa Minha Vida. Nove anos atendendo famílias em toda a Região Metropolitana de São Paulo.
-      </p>
-
-      <p class="regiao" data-reveal>
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-        Atendimento em toda a Região Metropolitana de São Paulo
-      </p>
     </div>
   </header>
 
-  <div class="stack">
-    <a class="cta-zap" data-reveal
-       href="https://wa.me/5511988097416?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Isabela%20Carvalho%20Im%C3%B3veis%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es."
-       target="_blank" rel="noopener">
-      <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-        <path d="M12.04 2c-5.46 0-9.9 4.44-9.9 9.9 0 1.75.46 3.45 1.32 4.95L2 22l5.3-1.38a9.87 9.87 0 0 0 4.74 1.2h.01c5.46 0 9.9-4.44 9.9-9.9 0-2.64-1.03-5.13-2.9-7A9.82 9.82 0 0 0 12.04 2Zm0 1.82c2.15 0 4.17.84 5.7 2.36a8.02 8.02 0 0 1 2.37 5.72c0 4.45-3.62 8.07-8.07 8.07a8.2 8.2 0 0 1-4.18-1.14l-.3-.18-3.1.81.83-3.03-.2-.31a8.03 8.03 0 0 1-1.23-4.3c0-4.45 3.62-8.07 8.08-8.07Zm-3.1 4.1c-.15 0-.4.06-.6.28-.21.22-.8.78-.8 1.9 0 1.12.82 2.2.93 2.36.12.15 1.6 2.44 3.88 3.42.54.23.96.37 1.29.48.54.17 1.03.15 1.42.09.43-.07 1.34-.55 1.53-1.08.19-.53.19-.98.13-1.08-.06-.09-.21-.15-.44-.26-.22-.11-1.33-.66-1.54-.73-.2-.08-.36-.11-.5.1-.16.23-.58.74-.71.89-.13.15-.26.17-.49.06-.22-.11-.95-.35-1.8-1.12a6.75 6.75 0 0 1-1.25-1.55c-.13-.22-.01-.34.1-.45.1-.1.22-.26.33-.39.11-.13.15-.22.22-.37.08-.15.04-.28-.02-.39-.06-.11-.5-1.22-.69-1.67-.18-.44-.36-.38-.5-.38l-.29-.01Z"/>
-      </svg>
-      <span>
-        <span class="label">Falar no WhatsApp</span>
-        <span class="sub">Atendimento direto comigo</span>
-      </span>
-    </a>
-  </div>
 
   <section class="stack">
     <ul class="facts" data-reveal>
@@ -1535,7 +1502,7 @@
 
     <div class="decorado-grid">
       <div class="decorado-video" data-reveal>
-        <video id="video-decorado" controls playsinline preload="metadata"
+        <video id="video-decorado" controls playsinline preload="metadata" poster="video/capa.jpg"
                width="576" height="1024" aria-label="Vídeo do apartamento decorado">
           <source src="video/decorado.mp4" type="video/mp4">
           Seu navegador não abre vídeo. <a href="video/decorado.mp4">Baixe o arquivo</a>.
@@ -1718,7 +1685,7 @@
   </section>
 
   <section class="band">
-    <img class="bg-photo" src="emp/redario.jpg" alt="Jardim com redário em frente ao edifício" loading="lazy" decoding="async">
+    <img class="bg-photo" src="emp/piscina.jpg" alt="Piscina do empreendimento com deck e palmeiras" loading="lazy" decoding="async">
     <div class="scrim"></div>
 
     <div class="sec-head" data-reveal>
@@ -1913,7 +1880,7 @@
   </section>
 
   <section class="band form-band" id="simular">
-    <img class="bg-photo" src="emp/piscina.jpg" alt="Piscina do empreendimento com deck e palmeiras" loading="lazy" decoding="async">
+    <img class="bg-photo" src="emp/gourmet.jpg" alt="Espaço gourmet do empreendimento" loading="lazy" decoding="async">
     <div class="scrim"></div>
 
     <div class="sec-head" data-reveal>
