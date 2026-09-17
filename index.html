@@ -651,136 +651,17 @@
 
   .rail img { width: 100%; height: 250px; object-fit: cover; }
 
-  .rail--proof li { width: 188px; }
+  .rail--proof li { width: 204px; }
 
   .rail--proof img {
     width: 100%;
     height: auto;
-    aspect-ratio: 739 / 1600;
+    aspect-ratio: 3 / 4;
     object-fit: cover;
-    object-position: 50% 50%;
-    background: #0B0D10;
   }
 
   @media (max-width: 640px) {
-    .rail--proof li { width: 168px; }
-  }
-
-  .rail figcaption {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    padding: 2.2rem .8rem .7rem;
-    color: #FFFFFF;
-    font-size: var(--step--1);
-    font-weight: 600;
-    background: linear-gradient(to top, rgba(6, 20, 32, .9), transparent);
-  }
-
-  .rail figcaption span { display: block; font-weight: 400; opacity: .78; font-size: .76rem; }
-
-  /* ---- galeria em faixa preta ---- */
-
-  .gallery {
-    background: var(--deep);
-    color: var(--deep-ink);
-    padding: 2.5rem 0 1.75rem;
-  }
-
-  .gallery .eyebrow { color: var(--brand); }
-  .gallery h2 { color: #FFFFFF; }
-  .gallery .note { color: var(--deep-soft); }
-
-  .gallery .rail li {
-    background: #16324C;
-    border-color: rgba(255, 255, 255, .09);
-    box-shadow: 0 16px 38px -20px rgba(0, 0, 0, .95);
-  }
-
-  .gallery .rail-nav button {
-    background: rgba(255, 255, 255, .07);
-    border-color: rgba(255, 255, 255, .2);
-    color: #FFFFFF;
-  }
-
-  .gallery .rail-nav button:hover:not(:disabled) { border-color: var(--brand); }
-  .gallery .rail li:focus-visible { outline-color: var(--brand); }
-
-  /* ---- galeria dos empreendimentos ---- */
-
-  .rail--emp li { width: 300px; }
-  .rail--emp img { height: 210px; object-fit: cover; }
-
-  @media (max-width: 640px) {
-    .rail--emp li { width: 78vw; max-width: 320px; }
-    .rail--emp img { height: 188px; }
-  }
-
-  /* ---- prova social dos clientes, em claro ---- */
-
-  .proof { padding: .25rem 0 0; }
-  .proof .rail li { background: var(--surface); }
-
-  /* ---- decorado ---- */
-
-  .decorado { gap: 1.1rem; }
-
-  .decorado-grid {
-    display: grid;
-    gap: 1.1rem;
-    align-items: center;
-  }
-
-  .decorado-video {
-    position: relative;
-    width: 100%;
-    max-width: 300px;
-    margin: 0 auto;
-    aspect-ratio: 576 / 1024;
-    border-radius: 12px;
-    overflow: hidden;
-    background: var(--surface-alt);
-    box-shadow: 0 1px 1px rgba(26, 26, 23, .05), 0 18px 44px -26px rgba(26, 26, 23, .6);
-  }
-
-  .decorado-video video {
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: cover;
-    background: #000;
-  }
-
-  .decorado-play {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    border: none;
-    background: rgba(255, 255, 255, .94);
-    color: #101F2E;
-    display: grid;
-    place-items: center;
-    cursor: pointer;
-    padding-left: 3px;
-    box-shadow: 0 6px 20px -6px rgba(0, 0, 0, .5);
-    transition: transform .2s ease, opacity .2s ease;
-  }
-
-  .decorado-play:hover { transform: translate(-50%, -50%) scale(1.06); }
-  .decorado-video.tocando .decorado-play { opacity: 0; pointer-events: none; }
-
-  .decorado-texto { display: flex; flex-direction: column; gap: .8rem; }
-  .decorado-texto p { margin: 0; color: var(--ink-soft); }
-  .decorado-texto .btn-accent { margin-top: .2rem; }
-
-  @media (min-width: 620px) {
-    .decorado-grid { grid-template-columns: 300px 1fr; gap: 1.6rem; }
-    .decorado-video { margin: 0; }
+    .rail--proof li { width: 78vw; max-width: 260px; }
   }
 
   /* ---- lightbox ---- */
@@ -1666,21 +1547,25 @@
     </div>
 
     <ul class="rail rail--proof" id="rail-entregas" data-reveal>
-      <li tabindex="0"><picture><source type="image/webp" srcset="fotos/entrega-1.webp"><img src="fotos/entrega-1.jpg" alt="Família recebendo as chaves do imóvel" loading="lazy" decoding="async"></picture></li>
-      <li tabindex="0"><picture><source type="image/webp" srcset="fotos/entrega-2.webp"><img src="fotos/entrega-2.jpg" alt="Família recebendo as chaves do imóvel" loading="lazy" decoding="async"></picture></li>
-      <li tabindex="0"><picture><source type="image/webp" srcset="fotos/entrega-3.webp"><img src="fotos/entrega-3.jpg" alt="Família recebendo as chaves do imóvel" loading="lazy" decoding="async"></picture></li>
-      <li tabindex="0"><picture><source type="image/webp" srcset="fotos/entrega-4.webp"><img src="fotos/entrega-4.jpg" alt="Clientes recebendo as chaves do imóvel" loading="lazy" decoding="async"></picture></li>
-      <li tabindex="0"><picture><source type="image/webp" srcset="fotos/entrega-5.webp"><img src="fotos/entrega-5.jpg" alt="Isabella Carvalho com clientes na entrega das chaves" loading="lazy" decoding="async"></picture></li>
-      <li tabindex="0"><picture><source type="image/webp" srcset="fotos/entrega-6.webp"><img src="fotos/entrega-6.jpg" alt="Isabella Carvalho com cliente na entrega das chaves" loading="lazy" decoding="async"></picture></li>
-      <li tabindex="0"><picture><source type="image/webp" srcset="fotos/entrega-7.webp"><img src="fotos/entrega-7.jpg" alt="Casal recebendo as chaves do imóvel" loading="lazy" decoding="async"></picture></li>
-      <li tabindex="0"><picture><source type="image/webp" srcset="fotos/entrega-8.webp"><img src="fotos/entrega-8.jpg" alt="Isabella Carvalho com clientes na entrega das chaves" loading="lazy" decoding="async"></picture></li>
-      <li tabindex="0"><picture><source type="image/webp" srcset="fotos/entrega-9.webp"><img src="fotos/entrega-9.jpg" alt="Casal recebendo as chaves do imóvel" loading="lazy" decoding="async"></picture></li>
-      <li tabindex="0"><picture><source type="image/webp" srcset="fotos/entrega-10.webp"><img src="fotos/entrega-10.jpg" alt="Clientes recebendo as chaves do imóvel" loading="lazy" decoding="async"></picture></li>
-      <li tabindex="0"><picture><source type="image/webp" srcset="fotos/entrega-11.webp"><img src="fotos/entrega-11.jpg" alt="Família no estande de vendas do empreendimento" loading="lazy" decoding="async"></picture></li>
-      <li tabindex="0"><picture><source type="image/webp" srcset="fotos/entrega-12.webp"><img src="fotos/entrega-12.jpg" alt="Cliente recebendo as chaves do imóvel" loading="lazy" decoding="async"></picture></li>
-      <li tabindex="0"><picture><source type="image/webp" srcset="fotos/entrega-13.webp"><img src="fotos/entrega-13.jpg" alt="Cliente recebendo as chaves do imóvel" loading="lazy" decoding="async"></picture></li>
-      <li tabindex="0"><picture><source type="image/webp" srcset="fotos/entrega-14.webp"><img src="fotos/entrega-14.jpg" alt="Clientes comemorando a conquista do imóvel" loading="lazy" decoding="async"></picture></li>
-      <li tabindex="0"><picture><source type="image/webp" srcset="fotos/entrega-15.webp"><img src="fotos/entrega-15.jpg" alt="Cliente recebendo as chaves do imóvel" loading="lazy" decoding="async"></picture></li>
+      <li tabindex="0"><picture><source type="image/webp" srcset="fotos/entrega-1.webp"><img src="fotos/entrega-1.jpg" alt="Família recebendo as chaves do imóvel" width="720" height="960" loading="lazy" decoding="async"></picture></li>
+      <li tabindex="0"><picture><source type="image/webp" srcset="fotos/entrega-2.webp"><img src="fotos/entrega-2.jpg" alt="Clientes recebendo as chaves do imóvel" width="720" height="960" loading="lazy" decoding="async"></picture></li>
+      <li tabindex="0"><picture><source type="image/webp" srcset="fotos/entrega-3.webp"><img src="fotos/entrega-3.jpg" alt="Família recebendo as chaves do imóvel" width="720" height="960" loading="lazy" decoding="async"></picture></li>
+      <li tabindex="0"><picture><source type="image/webp" srcset="fotos/entrega-4.webp"><img src="fotos/entrega-4.jpg" alt="Família no estande de vendas do empreendimento" width="720" height="960" loading="lazy" decoding="async"></picture></li>
+      <li tabindex="0"><picture><source type="image/webp" srcset="fotos/entrega-5.webp"><img src="fotos/entrega-5.jpg" alt="Isabella Carvalho com cliente na entrega das chaves" width="720" height="960" loading="lazy" decoding="async"></picture></li>
+      <li tabindex="0"><picture><source type="image/webp" srcset="fotos/entrega-6.webp"><img src="fotos/entrega-6.jpg" alt="Clientes recebendo as chaves do imóvel" width="720" height="960" loading="lazy" decoding="async"></picture></li>
+      <li tabindex="0"><picture><source type="image/webp" srcset="fotos/entrega-7.webp"><img src="fotos/entrega-7.jpg" alt="Clientes recebendo as chaves do imóvel" width="720" height="960" loading="lazy" decoding="async"></picture></li>
+      <li tabindex="0"><picture><source type="image/webp" srcset="fotos/entrega-8.webp"><img src="fotos/entrega-8.jpg" alt="Casal recebendo as chaves do imóvel" width="720" height="960" loading="lazy" decoding="async"></picture></li>
+      <li tabindex="0"><picture><source type="image/webp" srcset="fotos/entrega-9.webp"><img src="fotos/entrega-9.jpg" alt="Clientes recebendo as chaves do imóvel" width="720" height="960" loading="lazy" decoding="async"></picture></li>
+      <li tabindex="0"><picture><source type="image/webp" srcset="fotos/entrega-10.webp"><img src="fotos/entrega-10.jpg" alt="Clientes comemorando a conquista do imóvel" width="720" height="960" loading="lazy" decoding="async"></picture></li>
+      <li tabindex="0"><picture><source type="image/webp" srcset="fotos/entrega-11.webp"><img src="fotos/entrega-11.jpg" alt="Família recebendo as chaves do imóvel" width="720" height="960" loading="lazy" decoding="async"></picture></li>
+      <li tabindex="0"><picture><source type="image/webp" srcset="fotos/entrega-12.webp"><img src="fotos/entrega-12.jpg" alt="Casal recebendo as chaves do imóvel" width="720" height="960" loading="lazy" decoding="async"></picture></li>
+      <li tabindex="0"><picture><source type="image/webp" srcset="fotos/entrega-13.webp"><img src="fotos/entrega-13.jpg" alt="Cliente recebendo as chaves do imóvel" width="720" height="960" loading="lazy" decoding="async"></picture></li>
+      <li tabindex="0"><picture><source type="image/webp" srcset="fotos/entrega-14.webp"><img src="fotos/entrega-14.jpg" alt="Família recebendo as chaves do imóvel" width="720" height="960" loading="lazy" decoding="async"></picture></li>
+      <li tabindex="0"><picture><source type="image/webp" srcset="fotos/entrega-15.webp"><img src="fotos/entrega-15.jpg" alt="Cliente recebendo as chaves do imóvel" width="720" height="960" loading="lazy" decoding="async"></picture></li>
+      <li tabindex="0"><picture><source type="image/webp" srcset="fotos/entrega-16.webp"><img src="fotos/entrega-16.jpg" alt="Clientes recebendo as chaves do imóvel" width="720" height="960" loading="lazy" decoding="async"></picture></li>
+      <li tabindex="0"><picture><source type="image/webp" srcset="fotos/entrega-17.webp"><img src="fotos/entrega-17.jpg" alt="Cliente recebendo as chaves do imóvel" width="720" height="960" loading="lazy" decoding="async"></picture></li>
+      <li tabindex="0"><picture><source type="image/webp" srcset="fotos/entrega-18.webp"><img src="fotos/entrega-18.jpg" alt="Cliente recebendo as chaves do imóvel" width="720" height="960" loading="lazy" decoding="async"></picture></li>
+      <li tabindex="0"><picture><source type="image/webp" srcset="fotos/entrega-19.webp"><img src="fotos/entrega-19.jpg" alt="Clientes recebendo as chaves do imóvel" width="720" height="960" loading="lazy" decoding="async"></picture></li>
     </ul>
 
     <p class="note" style="padding:0 1.25rem" data-reveal>Publicações do Instagram da Isa, com autorização dos clientes.</p>
