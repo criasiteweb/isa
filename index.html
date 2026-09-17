@@ -1,0 +1,1894 @@
+<title>Isa Carvalho Imóveis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Instrument+Sans:wght@400;500;600&display=swap">
+
+<style>
+  :root {
+    --ground:      #F5F7F9;
+    --surface:     #FFFFFF;
+    --surface-alt: #E9EEF3;
+    --ink:         #0E161D;
+    --ink-soft:    #55636F;
+    --line:        #D8E0E7;
+    --brand:       #10406A;
+    --brand-deep:  #082033;
+    --brand-soft:  #7FB2D9;
+    --on-brand:    #FFFFFF;
+    --brand-ink:   #EAF1F7;
+    --accent:        #FF6B2C;
+    --accent-strong: #E4520F;
+    --on-accent:     #26100A;
+    --accent-weak:   #FFEDE3;
+    --zap:         #1A9E52;
+    --on-zap:      #FFFFFF;
+    --shadow:      0 1px 2px rgba(10, 34, 54, .06), 0 10px 28px -16px rgba(10, 34, 54, .32);
+    --scrim-1:     rgba(10, 34, 54, .40);
+    --scrim-2:     rgba(10, 34, 54, .86);
+
+    --step--1: clamp(.79rem, .77rem + .1vw, .84rem);
+    --step-0:  clamp(.98rem, .95rem + .15vw, 1.05rem);
+    --step-1:  clamp(1.12rem, 1.06rem + .3vw, 1.26rem);
+    --step-2:  clamp(1.4rem, 1.26rem + .65vw, 1.68rem);
+    --step-3:  clamp(2.1rem, 1.78rem + 1.55vw, 2.75rem);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground:      #0A1016;
+      --surface:     #131B23;
+      --surface-alt: #1B2631;
+      --ink:         #E3EBF2;
+      --ink-soft:    #91A1AF;
+      --line:        #253240;
+      --brand:       #59A3D8;
+      --brand-deep:  #07131D;
+      --brand-soft:  #9BC8E8;
+      --on-brand:    #05141F;
+      --brand-ink:   #E9F2F9;
+      --accent:        #FF8A50;
+      --accent-strong: #FFA574;
+      --on-accent:     #23100A;
+      --accent-weak:   #2C1A10;
+      --zap:         #33C06F;
+      --on-zap:      #04180D;
+      --shadow:      0 1px 2px rgba(0, 0, 0, .5), 0 10px 28px -16px rgba(0, 0, 0, .85);
+      --scrim-1:     rgba(7, 19, 29, .52);
+      --scrim-2:     rgba(7, 19, 29, .9);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --ground:      #0A1016;
+    --surface:     #131B23;
+    --surface-alt: #1B2631;
+    --ink:         #E3EBF2;
+    --ink-soft:    #91A1AF;
+    --line:        #253240;
+    --brand:       #59A3D8;
+    --brand-deep:  #07131D;
+    --brand-soft:  #9BC8E8;
+    --on-brand:    #05141F;
+    --brand-ink:   #E9F2F9;
+    --accent:        #FF8A50;
+    --accent-strong: #FFA574;
+    --on-accent:     #23100A;
+    --accent-weak:   #2C1A10;
+    --zap:         #33C06F;
+    --on-zap:      #04180D;
+    --shadow:      0 1px 2px rgba(0, 0, 0, .5), 0 10px 28px -16px rgba(0, 0, 0, .85);
+    --scrim-1:     rgba(7, 19, 29, .52);
+    --scrim-2:     rgba(7, 19, 29, .9);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: "Instrument Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: var(--step-0);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img { max-width: 100%; display: block; }
+
+  .page {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 0 0 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.25rem;
+    background: var(--ground);
+  }
+
+  /* ============ HERO ============ */
+
+  .hero {
+    position: relative;
+    min-height: 560px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1.75rem 1.5rem 3.5rem;
+    background: var(--brand-deep);
+    color: var(--brand-ink);
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  .bg-photo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+  }
+
+  .hero .bg-photo { object-position: 38% 32%; }
+
+  .scrim { position: absolute; inset: 0; z-index: -1; }
+
+  .hero .scrim {
+    background: linear-gradient(to bottom,
+      var(--scrim-1) 0%,
+      var(--scrim-1) 22%,
+      var(--scrim-2) 56%,
+      var(--brand-deep) 88%);
+  }
+
+  .badge {
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    background: var(--accent);
+    border: 1px solid var(--accent);
+    color: var(--on-accent);
+    font-size: var(--step--1);
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    padding: .32rem .8rem;
+    border-radius: 6px;
+    margin-bottom: auto;
+  }
+
+  .hero-body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .8rem;
+  }
+
+  .id-row { display: flex; align-items: center; gap: .9rem; }
+
+  .avatar {
+    position: relative;
+    flex: none;
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: var(--brand);
+    color: #FFFFFF;
+    font-family: "Archivo", system-ui, sans-serif;
+    font-weight: 700;
+    font-size: 1.45rem;
+    letter-spacing: -.02em;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, .45);
+    overflow: hidden;
+  }
+
+  .avatar img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+  .id-row .meta { display: flex; flex-direction: column; }
+
+  .id-row .nome {
+    margin: 0;
+    font-family: "Archivo", system-ui, sans-serif;
+    font-weight: 700;
+    font-size: var(--step-1);
+    letter-spacing: -.015em;
+    color: #FFFFFF;
+  }
+
+  .id-row .role {
+    margin: 0;
+    font-size: var(--step--1);
+    color: rgba(234, 241, 247, .8);
+  }
+
+  .id-row .creci-inline {
+    margin: 0;
+    font-size: var(--step--1);
+    font-weight: 600;
+    letter-spacing: .05em;
+    color: var(--accent);
+  }
+
+  h1 {
+    font-family: "Archivo", system-ui, sans-serif;
+    font-weight: 700;
+    font-size: var(--step-3);
+    line-height: 1.02;
+    letter-spacing: -.035em;
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  .destaque {
+    position: relative;
+    display: inline-block;
+    color: var(--accent);
+    white-space: nowrap;
+  }
+
+  .destaque::after {
+    content: "";
+    position: absolute;
+    left: -.04em;
+    right: -.04em;
+    bottom: .04em;
+    height: .13em;
+    border-radius: 99px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform .8s .4s cubic-bezier(.2, .75, .3, 1);
+  }
+
+  h1.in .destaque::after { transform: scaleX(1); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .destaque::after { transform: none; }
+  }
+
+  .pitch {
+    margin: 0;
+    max-width: 34ch;
+    color: rgba(234, 241, 247, .84);
+  }
+
+  .regions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .35rem;
+    list-style: none;
+    padding: 0;
+    margin: .2rem 0 0;
+  }
+
+  .regions li {
+    font-size: var(--step--1);
+    padding: .24rem .65rem;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, .26);
+    color: rgba(234, 241, 247, .92);
+  }
+
+  /* ============ BLOCOS ============ */
+
+  .stack {
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+    padding: 0 1.25rem;
+  }
+
+  .eyebrow {
+    font-size: var(--step--1);
+    text-transform: uppercase;
+    letter-spacing: .14em;
+    font-weight: 600;
+    color: var(--accent-strong);
+    margin: 0;
+  }
+
+  h2 {
+    font-family: "Archivo", system-ui, sans-serif;
+    font-weight: 700;
+    font-size: var(--step-2);
+    letter-spacing: -.028em;
+    line-height: 1.12;
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  .sec-head { display: flex; flex-direction: column; gap: .3rem; }
+
+  /* ---- CTA WhatsApp ---- */
+
+  .cta-zap {
+    margin-top: -3.2rem;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: .85rem;
+    background: var(--zap);
+    color: var(--on-zap);
+    text-decoration: none;
+    padding: 1rem 1.15rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    transition: transform .18s ease, filter .18s ease;
+  }
+
+  .cta-zap:hover, .cta-zap:focus-visible { transform: translateY(-2px); filter: brightness(1.05); }
+  .cta-zap:active { transform: translateY(0); }
+  .cta-zap svg { flex: none; }
+
+  .cta-zap .label {
+    display: block;
+    font-family: "Archivo", system-ui, sans-serif;
+    font-weight: 700;
+    font-size: var(--step-1);
+    letter-spacing: -.018em;
+    line-height: 1.15;
+  }
+
+  .cta-zap .sub { display: block; font-size: var(--step--1); opacity: .82; }
+
+  /* ---- credenciais ---- */
+
+  .creds {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: .6rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .creds li {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 1rem .85rem;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .55rem;
+    text-align: center;
+  }
+
+  .logo-slot {
+    position: relative;
+    width: 100%;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+  }
+
+  .logo-slot img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .logo-slot b {
+    font-family: "Archivo", system-ui, sans-serif;
+    font-weight: 700;
+    font-size: .98rem;
+    letter-spacing: .02em;
+    line-height: 1.1;
+    color: var(--brand);
+    text-transform: uppercase;
+  }
+
+  .creds .cred-label {
+    font-size: var(--step--1);
+    color: var(--ink-soft);
+    line-height: 1.35;
+  }
+
+  /* ---- números ---- */
+
+  .facts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: .55rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .facts li {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: .9rem .5rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+  }
+
+  .facts .n {
+    display: block;
+    font-family: "Archivo", system-ui, sans-serif;
+    font-weight: 700;
+    font-size: var(--step-2);
+    letter-spacing: -.03em;
+    line-height: 1;
+    color: var(--brand);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .facts .l {
+    display: block;
+    font-size: .74rem;
+    color: var(--ink-soft);
+    margin-top: .35rem;
+    line-height: 1.28;
+  }
+
+  /* ---- faixa com foto ---- */
+
+  .band {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    color: var(--brand-ink);
+    padding: 2.4rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+  }
+
+  .band .scrim {
+    background: linear-gradient(160deg, rgba(10, 34, 54, .95), rgba(10, 34, 54, .8) 55%, rgba(10, 34, 54, .93));
+  }
+
+  .band .eyebrow { color: var(--accent); }
+  .band h2 { color: var(--brand-ink); }
+
+  .why { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: .9rem; }
+
+  .why li { display: flex; gap: .7rem; align-items: flex-start; }
+
+  .why .tick {
+    flex: none;
+    width: 22px;
+    height: 22px;
+    margin-top: .2rem;
+    border-radius: 4px;
+    background: var(--accent);
+    border: 1px solid var(--accent);
+    color: var(--on-accent);
+    display: grid;
+    place-items: center;
+  }
+
+  .why .t { display: block; font-weight: 600; letter-spacing: -.01em; }
+
+  .why .d {
+    display: block;
+    font-size: var(--step--1);
+    color: rgba(234, 241, 247, .72);
+    line-height: 1.5;
+  }
+
+  .band-note { margin: 0; font-size: var(--step--1); color: rgba(234, 241, 247, .58); }
+
+  /* ---- passos ---- */
+
+  .steps {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    counter-reset: passo;
+  }
+
+  .steps li {
+    counter-increment: passo;
+    display: flex;
+    gap: .85rem;
+    align-items: flex-start;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: .9rem .95rem;
+    box-shadow: var(--shadow);
+  }
+
+  .steps li::before {
+    content: counter(passo);
+    flex: none;
+    width: 27px;
+    height: 27px;
+    border-radius: 6px;
+    background: var(--accent);
+    color: var(--on-accent);
+    font-family: "Archivo", system-ui, sans-serif;
+    font-weight: 700;
+    font-size: .9rem;
+    display: grid;
+    place-items: center;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .steps .t { display: block; font-weight: 600; letter-spacing: -.01em; }
+  .steps .d { display: block; font-size: var(--step--1); color: var(--ink-soft); line-height: 1.5; }
+
+  /* ---- carrosséis ---- */
+
+  .rail-head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: .85rem;
+  }
+
+  .rail-nav { display: flex; gap: .4rem; flex: none; }
+
+  .rail-nav button {
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    color: var(--ink);
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    transition: border-color .18s ease, opacity .18s ease;
+  }
+
+  .rail-nav button:hover:not(:disabled) { border-color: var(--accent); }
+  .rail-nav button:disabled { opacity: .3; cursor: default; }
+
+  .rail {
+    display: flex;
+    gap: .7rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: .2rem 1.25rem .6rem;
+    margin: 0;
+    list-style: none;
+    cursor: grab;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .rail::-webkit-scrollbar { display: none; }
+  .rail.dragging { cursor: grabbing; scroll-snap-type: none; }
+  .rail.dragging img { pointer-events: none; }
+
+  .rail li {
+    flex: none;
+    width: 208px;
+    scroll-snap-align: start;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    background: var(--surface-alt);
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow);
+    cursor: zoom-in;
+  }
+
+  .rail li:focus-visible { outline: 2px solid var(--brand); outline-offset: 3px; }
+
+  .rail img { width: 100%; height: 250px; object-fit: cover; }
+
+  .rail--proof li { width: 226px; }
+  .rail--proof img { height: 322px; object-fit: cover; object-position: 50% 42%; }
+
+  .rail figcaption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 2.2rem .8rem .7rem;
+    color: #FFFFFF;
+    font-size: var(--step--1);
+    font-weight: 600;
+    background: linear-gradient(to top, rgba(6, 20, 32, .9), transparent);
+  }
+
+  .rail figcaption span { display: block; font-weight: 400; opacity: .78; font-size: .76rem; }
+
+  /* ---- galeria em faixa preta ---- */
+
+  .gallery {
+    background: #08090B;
+    color: #F2F5F7;
+    padding: 2.5rem 0 1.75rem;
+  }
+
+  .gallery .eyebrow { color: var(--accent); }
+  .gallery h2 { color: #FFFFFF; }
+  .gallery .note { color: rgba(242, 245, 247, .5); }
+
+  .gallery .rail li {
+    background: #14181E;
+    border-color: rgba(255, 255, 255, .12);
+    box-shadow: 0 16px 38px -20px rgba(0, 0, 0, .95);
+  }
+
+  .gallery .rail-nav button {
+    background: rgba(255, 255, 255, .07);
+    border-color: rgba(255, 255, 255, .2);
+    color: #FFFFFF;
+  }
+
+  .gallery .rail-nav button:hover:not(:disabled) { border-color: var(--accent); }
+  .gallery .rail li:focus-visible { outline-color: var(--accent); }
+
+  /* ---- lightbox ---- */
+
+  .lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    background: rgba(6, 16, 26, .95);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .9rem;
+    padding: 1rem;
+  }
+
+  .lightbox[hidden] { display: none; }
+
+  .lightbox img {
+    max-width: min(100%, 460px);
+    max-height: 76vh;
+    border-radius: 10px;
+    object-fit: contain;
+    box-shadow: 0 24px 60px -20px rgba(0, 0, 0, .85);
+  }
+
+  .lb-count {
+    margin: 0;
+    color: rgba(234, 241, 247, .6);
+    font-size: var(--step--1);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: .1em;
+  }
+
+  .lightbox button {
+    position: absolute;
+    width: 46px;
+    height: 46px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, .24);
+    background: rgba(255, 255, 255, .1);
+    color: #FFFFFF;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    backdrop-filter: blur(6px);
+  }
+
+  .lightbox button:hover { background: rgba(255, 255, 255, .2); }
+  .lb-close { top: 1rem; right: 1rem; }
+  .lb-prev { left: .6rem; top: 50%; transform: translateY(-50%); }
+  .lb-next { right: .6rem; top: 50%; transform: translateY(-50%); }
+
+  /* ---- simulador ---- */
+
+  .sim {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-top: 4px solid var(--accent);
+    border-radius: 12px;
+    padding: 1.25rem;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    gap: .9rem;
+  }
+
+  .sim-top { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; }
+
+  .sim-top label { font-size: var(--step--1); font-weight: 600; color: var(--ink-soft); }
+
+  .sim-valor {
+    font-family: "Archivo", system-ui, sans-serif;
+    font-weight: 700;
+    font-size: var(--step-2);
+    letter-spacing: -.03em;
+    color: var(--accent-strong);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+
+  .sim input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 8px;
+    border-radius: 99px;
+    background: var(--surface-alt);
+    outline: none;
+    margin: 0;
+  }
+
+  .sim input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 4px solid var(--surface);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .28);
+    cursor: grab;
+  }
+
+  .sim input[type="range"]::-webkit-slider-thumb:active { cursor: grabbing; }
+
+  .sim input[type="range"]::-moz-range-thumb {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 4px solid var(--surface);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .28);
+    cursor: grab;
+  }
+
+  .sim input[type="range"]:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+
+  .sim-escala {
+    display: flex;
+    justify-content: space-between;
+    font-size: .72rem;
+    color: var(--ink-soft);
+    font-variant-numeric: tabular-nums;
+    margin-top: -.5rem;
+  }
+
+  .sim-faixa {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    background: var(--accent-weak);
+    border-radius: 9px;
+    padding: .75rem .9rem;
+  }
+
+  .sim-faixa .tag {
+    flex: none;
+    font-family: "Archivo", system-ui, sans-serif;
+    font-weight: 700;
+    font-size: var(--step-0);
+    background: var(--accent);
+    color: var(--on-accent);
+    padding: .3rem .7rem;
+    border-radius: 6px;
+  }
+
+  .sim-faixa .txt { font-size: var(--step--1); color: var(--ink); line-height: 1.4; }
+
+  .sim-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .55rem; }
+
+  .sim-grid div {
+    background: var(--surface-alt);
+    border-radius: 9px;
+    padding: .7rem .8rem;
+  }
+
+  .sim-grid .k {
+    display: block;
+    font-size: .72rem;
+    text-transform: uppercase;
+    letter-spacing: .09em;
+    font-weight: 600;
+    color: var(--ink-soft);
+  }
+
+  .sim-grid strong {
+    display: block;
+    margin-top: .2rem;
+    font-family: "Archivo", system-ui, sans-serif;
+    font-weight: 700;
+    font-size: var(--step-0);
+    letter-spacing: -.015em;
+    color: var(--brand);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .btn-accent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    background: var(--accent);
+    color: var(--on-accent);
+    border-radius: 8px;
+    padding: .9rem 1rem;
+    font-family: "Archivo", system-ui, sans-serif;
+    font-weight: 700;
+    font-size: var(--step-1);
+    letter-spacing: -.018em;
+    text-decoration: none;
+    transition: filter .18s ease, transform .18s ease;
+  }
+
+  .btn-accent:hover, .btn-accent:focus-visible { filter: brightness(1.06); transform: translateY(-1px); }
+
+  /* ---- perguntas frequentes ---- */
+
+  .faq {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+
+  .faq + .faq { margin-top: .5rem; }
+
+  .faq summary {
+    list-style: none;
+    cursor: pointer;
+    padding: .9rem 1rem;
+    font-weight: 600;
+    letter-spacing: -.01em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .8rem;
+  }
+
+  .faq summary::-webkit-details-marker { display: none; }
+
+  .faq summary::after {
+    content: "";
+    flex: none;
+    width: 11px;
+    height: 11px;
+    border-right: 2.4px solid var(--accent);
+    border-bottom: 2.4px solid var(--accent);
+    transform: rotate(45deg) translate(-2px, -2px);
+    transition: transform .22s ease;
+  }
+
+  .faq[open] summary::after { transform: rotate(-135deg) translate(-2px, -2px); }
+
+  .faq p {
+    margin: 0;
+    padding: 0 1rem 1rem;
+    color: var(--ink-soft);
+    font-size: var(--step--1);
+    line-height: 1.6;
+  }
+
+  /* ---- lista de links ---- */
+
+  .links { display: flex; flex-direction: column; gap: .55rem; }
+
+  .link {
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: .85rem .95rem;
+    text-decoration: none;
+    color: var(--ink);
+    box-shadow: var(--shadow);
+    transition: border-color .18s ease, transform .18s ease;
+  }
+
+  .link:hover, .link:focus-visible { border-color: var(--accent); transform: translateY(-1px); }
+
+  .link .icon {
+    flex: none;
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    background: var(--surface-alt);
+    color: var(--brand);
+    display: grid;
+    place-items: center;
+  }
+
+  .link .txt { flex: 1; min-width: 0; }
+  .link .t { display: block; font-weight: 600; letter-spacing: -.01em; }
+  .link .d { display: block; font-size: var(--step--1); color: var(--ink-soft); }
+  .link .chev { flex: none; color: var(--ink-soft); }
+
+  /* ---- card ---- */
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 1.2rem;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    gap: .7rem;
+  }
+
+  .card p { margin: 0; color: var(--ink-soft); }
+
+  .tags { display: flex; flex-wrap: wrap; gap: .35rem; list-style: none; padding: 0; margin: .2rem 0 0; }
+
+  .tags li {
+    font-size: var(--step--1);
+    font-weight: 500;
+    padding: .28rem .65rem;
+    border-radius: 5px;
+    background: var(--surface-alt);
+    color: var(--ink);
+  }
+
+  .brands { display: flex; flex-wrap: wrap; gap: .45rem; list-style: none; padding: 0; margin: .25rem 0 0; }
+
+  .brands li {
+    font-family: "Archivo", system-ui, sans-serif;
+    font-weight: 700;
+    font-size: var(--step-0);
+    letter-spacing: -.01em;
+    padding: .45rem .85rem;
+    border-radius: 7px;
+    background: var(--surface-alt);
+    color: var(--brand);
+  }
+
+  .brands li.mais {
+    font-family: "Instrument Sans", system-ui, sans-serif;
+    font-weight: 500;
+    font-size: var(--step--1);
+    color: var(--ink-soft);
+    background: transparent;
+    border: 1px dashed var(--line);
+    display: flex;
+    align-items: center;
+  }
+
+  /* ---- formulário ---- */
+
+  .form-band .scrim {
+    background: linear-gradient(170deg, rgba(10, 34, 54, .93), rgba(10, 34, 54, .97));
+  }
+
+  form.lead {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 1.2rem;
+    box-shadow: 0 18px 44px -22px rgba(0, 0, 0, .7);
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+  }
+
+  .field { display: flex; flex-direction: column; gap: .28rem; }
+  .field label { font-size: var(--step--1); font-weight: 600; color: var(--ink); }
+
+  .field input, .field select {
+    font: inherit;
+    font-size: var(--step-0);
+    color: var(--ink);
+    background: var(--ground);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: .65rem .75rem;
+    width: 100%;
+    appearance: none;
+  }
+
+  .field select {
+    background-image:
+      linear-gradient(45deg, transparent 50%, currentColor 50%),
+      linear-gradient(135deg, currentColor 50%, transparent 50%);
+    background-position: calc(100% - 18px) 55%, calc(100% - 13px) 55%;
+    background-size: 5px 5px, 5px 5px;
+    background-repeat: no-repeat;
+    padding-right: 2.2rem;
+  }
+
+  .field input:focus, .field select:focus {
+    outline: 2px solid var(--brand);
+    outline-offset: 1px;
+    border-color: var(--brand);
+  }
+
+  .send {
+    margin-top: .15rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    background: var(--zap);
+    color: var(--on-zap);
+    border-radius: 8px;
+    padding: .9rem 1rem;
+    font-family: "Archivo", system-ui, sans-serif;
+    font-weight: 700;
+    font-size: var(--step-1);
+    letter-spacing: -.018em;
+    text-decoration: none;
+    transition: filter .18s ease, transform .18s ease;
+  }
+
+  .send:hover, .send:focus-visible { filter: brightness(1.07); transform: translateY(-1px); }
+
+  .note { font-size: var(--step--1); color: var(--ink-soft); margin: 0; text-align: center; }
+
+  /* ---- rodapé ---- */
+
+  footer {
+    text-align: center;
+    padding: 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+    color: var(--ink-soft);
+    font-size: var(--step--1);
+  }
+
+  footer a { color: var(--brand); }
+
+  .creci {
+    align-self: center;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: .28rem .8rem;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 0 0 .25rem;
+  }
+
+  /* ---- barra fixa ---- */
+
+  .sticky {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 30;
+    padding: .55rem 1rem calc(.55rem + env(safe-area-inset-bottom));
+    background: color-mix(in srgb, var(--ground) 88%, transparent);
+    backdrop-filter: blur(12px);
+    border-top: 1px solid var(--line);
+    display: flex;
+    justify-content: center;
+  }
+
+  .sticky a {
+    width: 100%;
+    max-width: 452px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    background: var(--zap);
+    color: var(--on-zap);
+    text-decoration: none;
+    font-family: "Archivo", system-ui, sans-serif;
+    font-weight: 700;
+    letter-spacing: -.018em;
+    padding: .8rem 1rem;
+    border-radius: 8px;
+  }
+
+  @media (min-width: 640px) { .sticky { display: none; } }
+  @media (max-width: 639px) { .page { padding-bottom: 6rem; } }
+
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--brand); outline-offset: 3px; }
+
+  /* ---- animação ---- */
+
+  [data-reveal] {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity .7s cubic-bezier(.2, .7, .3, 1), transform .7s cubic-bezier(.2, .7, .3, 1);
+  }
+
+  [data-reveal].in { opacity: 1; transform: none; }
+
+  @media (prefers-reduced-motion: reduce) {
+    [data-reveal] { opacity: 1; transform: none; transition: none; }
+    * { transition: none !important; }
+  }
+</style>
+
+<div class="page">
+
+  <header class="hero">
+    <img class="bg-photo" src="fotos/chave.jpg" alt="Mão segurando a chave de um imóvel na porta de entrada">
+    <div class="scrim"></div>
+
+    <span class="badge" data-reveal>CRECI-SP 195.448</span>
+
+    <div class="hero-body">
+      <div class="id-row" data-reveal>
+        <div class="avatar">
+          <span>IC</span>
+          <img id="foto-isa" src="fotos/isa.jpg" alt="Isabella Carvalho, corretora de imóveis">
+        </div>
+        <div class="meta">
+          <p class="nome">Isabella Carvalho</p>
+          <p class="role">Corretora de imóveis</p>
+          <p class="creci-inline">@isacarvalhoimoveis</p>
+        </div>
+      </div>
+
+      <h1 data-reveal>Saia do aluguel<br><span class="destaque">ainda este ano</span>.</h1>
+
+      <p class="pitch" data-reveal>
+        Especialista em financiamento habitacional pela Caixa Econômica Federal e no
+        programa Minha Casa Minha Vida. Nove anos atendendo famílias em São Paulo.
+      </p>
+
+      <ul class="regions" data-reveal>
+        <li>Grande ABC</li>
+        <li>Zona Leste</li>
+        <li>São Paulo</li>
+      </ul>
+    </div>
+  </header>
+
+  <div class="stack">
+    <a class="cta-zap" data-reveal
+       href="https://wa.me/5511988097416?text=Ol%C3%A1%20Isabella!%20Vim%20pelo%20link%20da%20bio%20e%20quero%20a%20sua%20ajuda%20pra%20conquistar%20o%20meu%20im%C3%B3vel."
+       target="_blank" rel="noopener">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M12.04 2c-5.46 0-9.9 4.44-9.9 9.9 0 1.75.46 3.45 1.32 4.95L2 22l5.3-1.38a9.87 9.87 0 0 0 4.74 1.2h.01c5.46 0 9.9-4.44 9.9-9.9 0-2.64-1.03-5.13-2.9-7A9.82 9.82 0 0 0 12.04 2Zm0 1.82c2.15 0 4.17.84 5.7 2.36a8.02 8.02 0 0 1 2.37 5.72c0 4.45-3.62 8.07-8.07 8.07a8.2 8.2 0 0 1-4.18-1.14l-.3-.18-3.1.81.83-3.03-.2-.31a8.03 8.03 0 0 1-1.23-4.3c0-4.45 3.62-8.07 8.08-8.07Zm-3.1 4.1c-.15 0-.4.06-.6.28-.21.22-.8.78-.8 1.9 0 1.12.82 2.2.93 2.36.12.15 1.6 2.44 3.88 3.42.54.23.96.37 1.29.48.54.17 1.03.15 1.42.09.43-.07 1.34-.55 1.53-1.08.19-.53.19-.98.13-1.08-.06-.09-.21-.15-.44-.26-.22-.11-1.33-.66-1.54-.73-.2-.08-.36-.11-.5.1-.16.23-.58.74-.71.89-.13.15-.26.17-.49.06-.22-.11-.95-.35-1.8-1.12a6.75 6.75 0 0 1-1.25-1.55c-.13-.22-.01-.34.1-.45.1-.1.22-.26.33-.39.11-.13.15-.22.22-.37.08-.15.04-.28-.02-.39-.06-.11-.5-1.22-.69-1.67-.18-.44-.36-.38-.5-.38l-.29-.01Z"/>
+      </svg>
+      <span>
+        <span class="label">Falar no WhatsApp</span>
+        <span class="sub">Atendimento direto comigo</span>
+      </span>
+    </a>
+  </div>
+
+  <section class="stack" id="simulador">
+    <div class="sec-head" data-reveal>
+      <p class="eyebrow">Simulador</p>
+      <h2>Descubra a sua faixa em 5 segundos</h2>
+    </div>
+
+    <div class="sim" data-reveal>
+      <div class="sim-top">
+        <label for="renda-sim">Renda familiar bruta por mês</label>
+        <span class="sim-valor" id="sim-valor">R$ 3.000</span>
+      </div>
+
+      <input type="range" id="renda-sim" min="1000" max="15000" step="100" value="3000"
+             aria-label="Renda familiar bruta por mês">
+      <div class="sim-escala"><span>R$ 1.000</span><span>R$ 15.000</span></div>
+
+      <div class="sim-faixa">
+        <span class="tag" id="sim-tag">Faixa 1</span>
+        <span class="txt" id="sim-txt">Maior subsídio do programa e o menor juro.</span>
+      </div>
+
+      <div class="sim-grid">
+        <div><span class="k">Subsídio</span><strong id="sim-sub">até R$ 55 mil</strong></div>
+        <div><span class="k">Imóvel até</span><strong id="sim-teto">R$ 275 mil</strong></div>
+        <div><span class="k">Juros ao ano</span><strong id="sim-juros">a partir de 4%</strong></div>
+        <div><span class="k">Entrada</span><strong id="sim-entrada">reduzida pelo subsídio</strong></div>
+      </div>
+
+      <a class="btn-accent" id="sim-cta" href="https://wa.me/5511988097416" target="_blank" rel="noopener">
+        Confirmar com a Isa
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+
+      <p class="note">Estimativa pelas regras do programa em 2026. O valor exato sai na análise da Caixa Econômica Federal.</p>
+    </div>
+  </section>
+
+  <section class="stack">
+    <div class="sec-head" data-reveal>
+      <p class="eyebrow">Área de atuação</p>
+      <h2>Financiamento habitacional e programa federal</h2>
+    </div>
+
+    <ul class="creds" data-reveal>
+      <li>
+        <span class="logo-slot">
+          <b>Caixa<br>Econômica Federal</b>
+          <img class="logo-real" src="logos/caixa.png" alt="Caixa Econômica Federal">
+        </span>
+        <span class="cred-label">Financiamento habitacional e uso do FGTS</span>
+      </li>
+      <li>
+        <span class="logo-slot">
+          <b>Minha Casa<br>Minha Vida</b>
+          <img class="logo-real" src="logos/mcmv.png" alt="Minha Casa Minha Vida">
+        </span>
+        <span class="cred-label">Subsídio do governo federal por faixa de renda</span>
+      </li>
+    </ul>
+  </section>
+
+  <section class="stack">
+    <ul class="facts" data-reveal>
+      <li><span class="n" data-count="9" data-suf="+">0</span><span class="l">anos de mercado</span></li>
+      <li><span class="n" data-count="8,5" data-suf="&nbsp;mil">0</span><span class="l">seguidores acompanhando</span></li>
+      <li><span class="n" data-count="3" data-suf="">0</span><span class="l">regiões atendidas</span></li>
+    </ul>
+  </section>
+
+  <section class="gallery">
+    <div class="stack rail-head" data-reveal>
+      <div class="sec-head">
+        <p class="eyebrow">Clientes atendidos</p>
+        <h2>Entregas de chave registradas</h2>
+      </div>
+      <div class="rail-nav">
+        <button type="button" data-rail="rail-entregas" data-dir="-1" aria-label="Foto anterior">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 6-6 6 6 6"/></svg>
+        </button>
+        <button type="button" data-rail="rail-entregas" data-dir="1" aria-label="Próxima foto">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <ul class="rail rail--proof" id="rail-entregas" data-reveal>
+      <li tabindex="0"><img src="fotos/entrega-1.jpg" alt="Família recebendo as chaves do imóvel" loading="lazy"></li>
+      <li tabindex="0"><img src="fotos/entrega-2.jpg" alt="Família recebendo as chaves do imóvel" loading="lazy"></li>
+      <li tabindex="0"><img src="fotos/entrega-3.jpg" alt="Família recebendo as chaves do imóvel" loading="lazy"></li>
+      <li tabindex="0"><img src="fotos/entrega-4.jpg" alt="Clientes recebendo as chaves do imóvel" loading="lazy"></li>
+      <li tabindex="0"><img src="fotos/entrega-5.jpg" alt="Isabella Carvalho com clientes na entrega das chaves" loading="lazy"></li>
+      <li tabindex="0"><img src="fotos/entrega-6.jpg" alt="Isabella Carvalho com cliente na entrega das chaves" loading="lazy"></li>
+      <li tabindex="0"><img src="fotos/entrega-7.jpg" alt="Casal recebendo as chaves do imóvel" loading="lazy"></li>
+      <li tabindex="0"><img src="fotos/entrega-8.jpg" alt="Isabella Carvalho com clientes na entrega das chaves" loading="lazy"></li>
+      <li tabindex="0"><img src="fotos/entrega-9.jpg" alt="Casal recebendo as chaves do imóvel" loading="lazy"></li>
+      <li tabindex="0"><img src="fotos/entrega-10.jpg" alt="Clientes recebendo as chaves do imóvel" loading="lazy"></li>
+      <li tabindex="0"><img src="fotos/entrega-11.jpg" alt="Família no estande de vendas do empreendimento" loading="lazy"></li>
+      <li tabindex="0"><img src="fotos/entrega-12.jpg" alt="Cliente recebendo as chaves do imóvel" loading="lazy"></li>
+      <li tabindex="0"><img src="fotos/entrega-13.jpg" alt="Cliente recebendo as chaves do imóvel" loading="lazy"></li>
+      <li tabindex="0"><img src="fotos/entrega-14.jpg" alt="Clientes comemorando a conquista do imóvel" loading="lazy"></li>
+      <li tabindex="0"><img src="fotos/entrega-15.jpg" alt="Cliente recebendo as chaves do imóvel" loading="lazy"></li>
+    </ul>
+
+    <p class="note" style="padding:0 1.25rem" data-reveal>Publicações do Instagram da Isa, com autorização dos clientes.</p>
+  </section>
+
+  <section class="band">
+    <img class="bg-photo" src="fotos/fachada.jpg" alt="Fachada de um edifício residencial iluminada pelo sol da tarde">
+    <div class="scrim"></div>
+
+    <div class="sec-head" data-reveal>
+      <p class="eyebrow">Diferenciais</p>
+      <h2>Nove anos dedicados a um único programa</h2>
+    </div>
+
+    <ul class="why">
+      <li data-reveal>
+        <span class="tick" aria-hidden="true">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4.5 4.5L19 7"/></svg>
+        </span>
+        <span>
+          <span class="t">Especialista, não generalista</span>
+          <span class="d">Desde 2016 trabalho exclusivamente com Minha Casa Minha Vida. Conheço as faixas de renda, os subsídios e os critérios que a Caixa aprova.</span>
+        </span>
+      </li>
+      <li data-reveal>
+        <span class="tick" aria-hidden="true">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4.5 4.5L19 7"/></svg>
+        </span>
+        <span>
+          <span class="t">Atendimento direto</span>
+          <span class="d">Sem call center e sem repasse entre atendentes. Do primeiro contato até a assinatura, quem responde sou eu.</span>
+        </span>
+      </li>
+      <li data-reveal>
+        <span class="tick" aria-hidden="true">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4.5 4.5L19 7"/></svg>
+        </span>
+        <span>
+          <span class="t">Renda informal aprovada</span>
+          <span class="d">Motorista de aplicativo, entregador, autônomo e MEI. Monto a comprovação de renda que o banco aceita.</span>
+        </span>
+      </li>
+      <li data-reveal>
+        <span class="tick" aria-hidden="true">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4.5 4.5L19 7"/></svg>
+        </span>
+        <span>
+          <span class="t">Histórico público</span>
+          <span class="d">Cada entrega de chave é publicada no Instagram, onde 8,5 mil pessoas acompanham o trabalho.</span>
+        </span>
+      </li>
+    </ul>
+
+    <p class="band-note" data-reveal>Corretora registrada no CRECI-SP 195.448.</p>
+  </section>
+
+  <section class="stack">
+    <div class="sec-head" data-reveal>
+      <p class="eyebrow">Como funciona</p>
+      <h2>Quatro passos até a chave</h2>
+    </div>
+
+    <ol class="steps">
+      <li data-reveal>
+        <span>
+          <span class="t">Conversa inicial no WhatsApp</span>
+          <span class="d">Você informa sua renda e a região onde quer morar. Leva cinco minutos e não tem custo.</span>
+        </span>
+      </li>
+      <li data-reveal>
+        <span>
+          <span class="t">Análise de crédito e subsídio</span>
+          <span class="d">Identifico em qual faixa do programa você entra e quanto o governo abate da sua entrada.</span>
+        </span>
+      </li>
+      <li data-reveal>
+        <span>
+          <span class="t">Seleção de imóveis e visita</span>
+          <span class="d">Apresento apenas o que cabe no seu orçamento e no que o banco aprova, sem visita desnecessária.</span>
+        </span>
+      </li>
+      <li data-reveal>
+        <span>
+          <span class="t">Assinatura e entrega da chave</span>
+          <span class="d">Cuido da documentação e acompanho o processo na Caixa Econômica Federal até a entrega.</span>
+        </span>
+      </li>
+    </ol>
+  </section>
+
+  <section class="stack">
+    <div class="card" data-reveal>
+      <p class="eyebrow">Parceiros</p>
+      <h2>Trabalho com as construtoras de São Paulo</h2>
+      <p>
+        Não fico presa a um único empreendimento. Busco entre as construtoras que atuam
+        no Grande ABC, na Zona Leste e na capital, e apresento o que faz sentido para a
+        sua renda.
+      </p>
+      <ul class="brands">
+        <li>MRV</li>
+        <li>Cury</li>
+        <li>Direcional</li>
+        <li>Sousa Araujo</li>
+        <li class="mais">entre outras</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="stack rail-head" data-reveal>
+      <div class="sec-head">
+        <p class="eyebrow">Padrão de entrega</p>
+        <h2>O que dá pra conquistar</h2>
+      </div>
+      <div class="rail-nav">
+        <button type="button" data-rail="rail-imoveis" data-dir="-1" aria-label="Foto anterior">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 6-6 6 6 6"/></svg>
+        </button>
+        <button type="button" data-rail="rail-imoveis" data-dir="1" aria-label="Próxima foto">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <ul class="rail" id="rail-imoveis" data-reveal>
+      <li tabindex="0">
+        <figure style="margin:0">
+          <img src="fotos/sala.jpg" alt="Sala de estar integrada com a cozinha em um apartamento" loading="lazy">
+          <figcaption>Sala integrada<span>Apartamentos de 2 dormitórios</span></figcaption>
+        </figure>
+      </li>
+      <li tabindex="0">
+        <figure style="margin:0">
+          <img src="fotos/cozinha.jpg" alt="Cozinha clara com armários planejados e bancada" loading="lazy">
+          <figcaption>Cozinha pronta<span>Entrega com acabamento</span></figcaption>
+        </figure>
+      </li>
+      <li tabindex="0">
+        <figure style="margin:0">
+          <img src="fotos/predio.jpg" alt="Fachada de um prédio residencial ao fim da tarde" loading="lazy">
+          <figcaption>Condomínio fechado<span>Perto de comércio e transporte</span></figcaption>
+        </figure>
+      </li>
+    </ul>
+
+    <p class="note" style="padding:0 1.25rem" data-reveal>Imagens ilustrativas.</p>
+  </section>
+
+  <section class="stack">
+    <p class="eyebrow" data-reveal>Escolha por onde começar</p>
+
+    <div class="links">
+      <a class="link" data-reveal target="_blank" rel="noopener"
+         href="https://wa.me/5511988097416?text=Oi%20Isabella!%20Quero%20saber%20se%20tenho%20direito%20ao%20subs%C3%ADdio%20do%20Minha%20Casa%20Minha%20Vida.">
+        <span class="icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M9.5 21v-6h5v6"/></svg>
+        </span>
+        <span class="txt">
+          <span class="t">Consultar meu subsídio</span>
+          <span class="d">Quanto o governo pode abater da sua entrada</span>
+        </span>
+        <span class="chev" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>
+        </span>
+      </a>
+
+      <a class="link" data-reveal target="_blank" rel="noopener"
+         href="https://wa.me/5511988097416?text=Oi%20Isabella!%20Quero%20ver%20os%20im%C3%B3veis%20dispon%C3%ADveis%20na%20minha%20faixa.">
+        <span class="icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="8" height="16" rx="1.5"/><rect x="13" y="9" width="8" height="11" rx="1.5"/><path d="M6 8h2M6 12h2M16 13h2"/></svg>
+        </span>
+        <span class="txt">
+          <span class="t">Ver imóveis disponíveis</span>
+          <span class="d">Lançamentos e prontos no ABC e Zona Leste</span>
+        </span>
+        <span class="chev" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>
+        </span>
+      </a>
+
+      <a class="link" data-reveal target="_blank" rel="noopener"
+         href="https://wa.me/5511988097416?text=Oi%20Isabella!%20Quero%20indicar%20algu%C3%A9m%20que%20est%C3%A1%20procurando%20im%C3%B3vel.">
+        <span class="icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 19v-1.5a3.5 3.5 0 0 0-3.5-3.5h-5A3.5 3.5 0 0 0 4 17.5V19"/><circle cx="10" cy="7.5" r="3.5"/><path d="M19 8v6M22 11h-6"/></svg>
+        </span>
+        <span class="txt">
+          <span class="t">Indicar um cliente</span>
+          <span class="d">Você indica e eu cuido de todo o processo</span>
+        </span>
+        <span class="chev" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>
+        </span>
+      </a>
+
+      <a class="link" data-reveal href="https://www.instagram.com/isacarvalhoimoveis/" target="_blank" rel="noopener">
+        <span class="icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg>
+        </span>
+        <span class="txt">
+          <span class="t">@isacarvalhoimoveis</span>
+          <span class="d">Entregas de chave e novidades do programa</span>
+        </span>
+        <span class="chev" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>
+        </span>
+      </a>
+    </div>
+  </section>
+
+  <section class="stack">
+    <div class="card" data-reveal>
+      <p class="eyebrow">Perfis atendidos</p>
+      <h2>Renda de aplicativo também financia</h2>
+      <p>
+        Renda informal não impede a aprovação. Monto a documentação adequada para quem
+        trabalha por aplicativo e conduzo o financiamento até a assinatura.
+      </p>
+      <ul class="tags">
+        <li>Uber</li>
+        <li>99</li>
+        <li>iFood</li>
+        <li>Keeta</li>
+        <li>Autônomo</li>
+        <li>MEI</li>
+        <li>CLT</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="stack">
+    <div class="sec-head" data-reveal>
+      <p class="eyebrow">Dúvidas frequentes</p>
+      <h2>O que todo mundo pergunta antes de começar</h2>
+    </div>
+
+    <div data-reveal>
+      <details class="faq">
+        <summary>Posso usar o meu FGTS?</summary>
+        <p>Sim. O FGTS pode entrar como parte da entrada ou para abater o saldo devedor, desde que você atenda às regras do fundo. Eu verifico isso logo na análise inicial.</p>
+      </details>
+
+      <details class="faq">
+        <summary>Trabalho por aplicativo. Consigo financiar?</summary>
+        <p>Consegue. Renda informal é aceita quando a comprovação é montada do jeito certo. É justamente o perfil que mais atendo: motorista de aplicativo, entregador, autônomo e MEI.</p>
+      </details>
+
+      <details class="faq">
+        <summary>Preciso ter dinheiro de entrada guardado?</summary>
+        <p>Depende da sua faixa. Nas faixas 1 e 2 o subsídio do governo cobre boa parte da entrada, e o restante costuma ser parcelado direto com a construtora. Eu calculo isso com você antes de qualquer visita.</p>
+      </details>
+
+      <details class="faq">
+        <summary>Estou com o nome negativado. Isso impede?</summary>
+        <p>Restrição no CPF pode travar a aprovação do crédito, mas nem sempre inviabiliza. A gente consulta a sua situação antes de seguir, para você não perder tempo nem levar não do banco.</p>
+      </details>
+
+      <details class="faq">
+        <summary>Já tenho um imóvel no meu nome. Posso participar?</summary>
+        <p>O Minha Casa Minha Vida é voltado para quem não possui imóvel registrado e não recebeu subsídio habitacional antes. Se esse for o seu caso, eu te mostro as outras linhas de financiamento disponíveis.</p>
+      </details>
+
+      <details class="faq">
+        <summary>Em quais regiões você atende?</summary>
+        <p>Grande ABC, Zona Leste de São Paulo e demais regiões da capital. Busco entre as construtoras que atuam nessas praças e apresento o que cabe no seu orçamento.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="band form-band" id="simular">
+    <img class="bg-photo" src="fotos/predio.jpg" alt="Prédio residencial com céu aberto ao entardecer">
+    <div class="scrim"></div>
+
+    <div class="sec-head" data-reveal>
+      <p class="eyebrow">Atendimento em 1 minuto</p>
+      <h2>Informe o básico e eu retorno com as opções</h2>
+    </div>
+
+    <form class="lead" novalidate data-reveal>
+      <div class="field">
+        <label for="nome">Seu nome</label>
+        <input id="nome" name="nome" type="text" autocomplete="name" placeholder="Como posso te chamar?">
+      </div>
+
+      <div class="field">
+        <label for="objetivo">O que você procura</label>
+        <select id="objetivo" name="objetivo">
+          <option>Comprar meu primeiro imóvel</option>
+          <option>Trocar de imóvel</option>
+          <option>Investir</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="regiao">Região de interesse</label>
+        <select id="regiao" name="regiao">
+          <option>Grande ABC</option>
+          <option>Zona Leste de São Paulo</option>
+          <option>Outra região de São Paulo</option>
+          <option>Ainda estou decidindo</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="renda">Renda familiar aproximada</label>
+        <select id="renda" name="renda">
+          <option>Até R$ 2.850</option>
+          <option>De R$ 2.850 a R$ 4.700</option>
+          <option>De R$ 4.700 a R$ 8.600</option>
+          <option>Acima de R$ 8.600</option>
+          <option>Prefiro falar no WhatsApp</option>
+        </select>
+      </div>
+
+      <a class="send" id="enviar" href="https://wa.me/5511988097416" target="_blank" rel="noopener">
+        Enviar no WhatsApp
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+
+      <p class="note">A conversa abre já preenchida. Nada fica salvo neste site.</p>
+    </form>
+  </section>
+
+  <footer data-reveal>
+    <p class="creci">CRECI-SP 195.448</p>
+    <p>Isabella Carvalho &middot; Corretora de imóveis &middot; São Paulo / SP</p>
+    <p><a href="https://wa.me/5511988097416" target="_blank" rel="noopener">(11) 98809-7416</a></p>
+  </footer>
+</div>
+
+<div class="sticky">
+  <a href="https://wa.me/5511988097416?text=Ol%C3%A1%20Isabella!%20Vim%20pelo%20link%20da%20bio%20e%20quero%20a%20sua%20ajuda%20pra%20conquistar%20o%20meu%20im%C3%B3vel." target="_blank" rel="noopener">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M12.04 2c-5.46 0-9.9 4.44-9.9 9.9 0 1.75.46 3.45 1.32 4.95L2 22l5.3-1.38a9.87 9.87 0 0 0 4.74 1.2h.01c5.46 0 9.9-4.44 9.9-9.9 0-2.64-1.03-5.13-2.9-7A9.82 9.82 0 0 0 12.04 2Zm0 1.82c2.15 0 4.17.84 5.7 2.36a8.02 8.02 0 0 1 2.37 5.72c0 4.45-3.62 8.07-8.07 8.07a8.2 8.2 0 0 1-4.18-1.14l-.3-.18-3.1.81.83-3.03-.2-.31a8.03 8.03 0 0 1-1.23-4.3c0-4.45 3.62-8.07 8.08-8.07Z"/>
+    </svg>
+    Falar com a Isa agora
+  </a>
+</div>
+
+<div class="lightbox" id="lightbox" hidden>
+  <button class="lb-close" type="button" aria-label="Fechar">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+  </button>
+  <button class="lb-prev" type="button" aria-label="Anterior">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 6-6 6 6 6"/></svg>
+  </button>
+  <img id="lb-img" alt="">
+  <p class="lb-count" id="lb-count"></p>
+  <button class="lb-next" type="button" aria-label="Próxima">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>
+  </button>
+</div>
+
+<script>
+  (function () {
+    var PHONE = "5511988097416";
+
+    /* ---- foto da Isa e logos oficiais: caem para o texto se o arquivo não existir ---- */
+    ["foto-isa"].forEach(function (id) {
+      var el = document.getElementById(id);
+      if (!el) return;
+      el.addEventListener("error", function () { el.remove(); });
+      if (el.complete && el.naturalWidth === 0) el.remove();
+    });
+
+    Array.prototype.forEach.call(document.querySelectorAll(".logo-real"), function (img) {
+      img.addEventListener("error", function () { img.remove(); });
+      if (img.complete && img.naturalWidth === 0) img.remove();
+    });
+
+    /* ---- galeria: some sozinha se as fotos dos clientes não estiverem publicadas ---- */
+    var galeria = document.querySelector(".gallery");
+    if (galeria) {
+      var sonda = new Image();
+      sonda.onerror = function () { galeria.remove(); };
+      sonda.src = "fotos/entrega-1.jpg";
+    }
+
+    /* ---- animação de entrada ---- */
+    var alvos = document.querySelectorAll("[data-reveal]");
+    if (!("IntersectionObserver" in window)) {
+      Array.prototype.forEach.call(alvos, function (el) { el.classList.add("in"); });
+    } else {
+      var obs = new IntersectionObserver(function (entradas) {
+        entradas.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add("in"); obs.unobserve(e.target); }
+        });
+      }, { rootMargin: "0px 0px -8% 0px", threshold: .12 });
+      Array.prototype.forEach.call(alvos, function (el, i) {
+        el.style.transitionDelay = Math.min(i % 5, 4) * 60 + "ms";
+        obs.observe(el);
+      });
+    }
+
+    /* ---- carrosséis: arrastar, setas e teclado ---- */
+    var rails = document.querySelectorAll(".rail");
+
+    function passo(rail) {
+      var item = rail.querySelector("li");
+      return item ? item.getBoundingClientRect().width + 11 : 220;
+    }
+
+    function atualizaSetas(rail) {
+      var btns = document.querySelectorAll('[data-rail="' + rail.id + '"]');
+      var max = rail.scrollWidth - rail.clientWidth - 2;
+      Array.prototype.forEach.call(btns, function (b) {
+        b.disabled = b.dataset.dir === "-1" ? rail.scrollLeft <= 2 : rail.scrollLeft >= max;
+      });
+    }
+
+    Array.prototype.forEach.call(rails, function (rail) {
+      var ativo = false, x0 = 0, s0 = 0, andou = 0;
+
+      rail.addEventListener("pointerdown", function (e) {
+        if (e.pointerType === "touch") return;
+        ativo = true; andou = 0; x0 = e.clientX; s0 = rail.scrollLeft;
+        rail.classList.add("dragging");
+        rail.setPointerCapture(e.pointerId);
+      });
+
+      rail.addEventListener("pointermove", function (e) {
+        if (!ativo) return;
+        var dx = e.clientX - x0;
+        andou = Math.max(andou, Math.abs(dx));
+        rail.scrollLeft = s0 - dx;
+        e.preventDefault();
+      });
+
+      function solta() {
+        if (!ativo) return;
+        ativo = false;
+        rail.classList.remove("dragging");
+        rail.dataset.arrastou = andou > 6 ? "1" : "";
+        atualizaSetas(rail);
+      }
+
+      rail.addEventListener("pointerup", solta);
+      rail.addEventListener("pointercancel", solta);
+      rail.addEventListener("scroll", function () { atualizaSetas(rail); }, { passive: true });
+      atualizaSetas(rail);
+    });
+
+    Array.prototype.forEach.call(document.querySelectorAll("[data-rail]"), function (btn) {
+      btn.addEventListener("click", function () {
+        var rail = document.getElementById(btn.dataset.rail);
+        if (!rail) return;
+        rail.scrollBy({ left: passo(rail) * Number(btn.dataset.dir), behavior: "smooth" });
+      });
+    });
+
+    /* ---- lightbox ---- */
+    var lb = document.getElementById("lightbox");
+    var lbImg = document.getElementById("lb-img");
+    var lbCount = document.getElementById("lb-count");
+    var grupo = [], indice = 0;
+
+    function mostra(i) {
+      if (!grupo.length) return;
+      indice = (i + grupo.length) % grupo.length;
+      lbImg.src = grupo[indice].src;
+      lbImg.alt = grupo[indice].alt || "";
+      lbCount.textContent = (indice + 1) + " de " + grupo.length;
+    }
+
+    function abre(rail, img) {
+      grupo = Array.prototype.slice.call(rail.querySelectorAll("img"));
+      mostra(grupo.indexOf(img));
+      lb.hidden = false;
+      document.body.style.overflow = "hidden";
+    }
+
+    function fecha() {
+      lb.hidden = true;
+      lbImg.removeAttribute("src");
+      document.body.style.overflow = "";
+    }
+
+    Array.prototype.forEach.call(rails, function (rail) {
+      rail.addEventListener("click", function (e) {
+        if (rail.dataset.arrastou === "1") { rail.dataset.arrastou = ""; return; }
+        var img = e.target.closest("li") && e.target.closest("li").querySelector("img");
+        if (img) abre(rail, img);
+      });
+      rail.addEventListener("keydown", function (e) {
+        if (e.key !== "Enter" && e.key !== " ") return;
+        var li = e.target.closest("li");
+        if (!li) return;
+        e.preventDefault();
+        abre(rail, li.querySelector("img"));
+      });
+    });
+
+    lb.querySelector(".lb-close").addEventListener("click", fecha);
+    lb.querySelector(".lb-prev").addEventListener("click", function () { mostra(indice - 1); });
+    lb.querySelector(".lb-next").addEventListener("click", function () { mostra(indice + 1); });
+    lb.addEventListener("click", function (e) { if (e.target === lb) fecha(); });
+
+    document.addEventListener("keydown", function (e) {
+      if (lb.hidden) return;
+      if (e.key === "Escape") fecha();
+      if (e.key === "ArrowLeft") mostra(indice - 1);
+      if (e.key === "ArrowRight") mostra(indice + 1);
+    });
+
+    /* ---- formulário ---- */
+    var form = document.querySelector("form.lead");
+    var btnEnviar = document.getElementById("enviar");
+    var nome = document.getElementById("nome");
+
+    function monta() {
+      var n = nome.value.trim();
+      var msg =
+        "Oi Isabella! Vim pelo seu link da bio.\n\n" +
+        "Nome: " + (n || "(não informado)") + "\n" +
+        "Procuro: " + document.getElementById("objetivo").value + "\n" +
+        "Região: " + document.getElementById("regiao").value + "\n" +
+        "Renda familiar: " + document.getElementById("renda").value;
+      btnEnviar.href = "https://wa.me/" + PHONE + "?text=" + encodeURIComponent(msg);
+    }
+
+    form.addEventListener("input", monta);
+    form.addEventListener("change", monta);
+
+    btnEnviar.addEventListener("click", function (e) {
+      if (!nome.value.trim()) {
+        e.preventDefault();
+        nome.focus();
+        nome.style.borderColor = "var(--brand)";
+        return;
+      }
+      monta();
+    });
+
+    monta();
+
+    /* ---- contadores ---- */
+    var nums = document.querySelectorAll("[data-count]");
+    function anima(el) {
+      var bruto = el.dataset.count;
+      var decimal = bruto.indexOf(",") > -1;
+      var alvo = parseFloat(bruto.replace(",", "."));
+      var suf = el.dataset.suf || "";
+      var t0 = null, dur = 1100;
+      function passo(t) {
+        if (!t0) t0 = t;
+        var p = Math.min((t - t0) / dur, 1);
+        var v = alvo * (1 - Math.pow(1 - p, 3));
+        el.innerHTML = (decimal ? v.toFixed(1).replace(".", ",") : Math.round(v)) + suf;
+        if (p < 1) requestAnimationFrame(passo);
+      }
+      requestAnimationFrame(passo);
+    }
+
+    if ("IntersectionObserver" in window) {
+      var obsN = new IntersectionObserver(function (es) {
+        es.forEach(function (e) {
+          if (e.isIntersecting) { anima(e.target); obsN.unobserve(e.target); }
+        });
+      }, { threshold: .6 });
+      Array.prototype.forEach.call(nums, function (el) { obsN.observe(el); });
+    } else {
+      Array.prototype.forEach.call(nums, function (el) {
+        el.innerHTML = el.dataset.count + (el.dataset.suf || "");
+      });
+    }
+
+    /* ---- simulador de faixa ---- */
+    var FAIXAS = [
+      { max: 3200,  nome: "Faixa 1",
+        txt: "O maior subsídio do programa e o menor juro.",
+        sub: "até R$ 55 mil", teto: "R$ 275 mil", juros: "a partir de 4%",
+        entrada: "reduzida pelo subsídio" },
+      { max: 5000,  nome: "Faixa 2",
+        txt: "Ainda tem subsídio, que diminui conforme a renda sobe.",
+        sub: "parcial, até R$ 55 mil", teto: "R$ 275 mil", juros: "4,75% a 7%",
+        entrada: "reduzida pelo subsídio" },
+      { max: 9600,  nome: "Faixa 3",
+        txt: "Sem subsídio, mas com juro abaixo do mercado e teto maior.",
+        sub: "não há nesta faixa", teto: "R$ 400 mil", juros: "até 8,16%",
+        entrada: "negociada com a construtora" },
+      { max: 13000, nome: "Faixa 4",
+        txt: "Faixa criada em 2026, com o maior teto de imóvel do programa.",
+        sub: "não há nesta faixa", teto: "R$ 600 mil", juros: "cerca de 10%",
+        entrada: "negociada com a construtora" },
+      { max: Infinity, nome: "Fora do programa",
+        txt: "Acima do teto do programa, mas o financiamento tradicional continua valendo.",
+        sub: "não se aplica", teto: "sem teto do programa", juros: "conforme o banco",
+        entrada: "conforme o banco" }
+    ];
+
+    var range = document.getElementById("renda-sim");
+
+    if (range) {
+      var elValor = document.getElementById("sim-valor");
+      var elTag = document.getElementById("sim-tag");
+      var elTxt = document.getElementById("sim-txt");
+      var elSub = document.getElementById("sim-sub");
+      var elTeto = document.getElementById("sim-teto");
+      var elJuros = document.getElementById("sim-juros");
+      var elEntrada = document.getElementById("sim-entrada");
+      var simCta = document.getElementById("sim-cta");
+
+      function reais(v) {
+        return "R$ " + v.toLocaleString("pt-BR");
+      }
+
+      function atualiza() {
+        var v = Number(range.value);
+        var f = FAIXAS.find(function (x) { return v <= x.max; });
+
+        elValor.textContent = reais(v) + (v >= 15000 ? "+" : "");
+        elTag.textContent = f.nome;
+        elTxt.textContent = f.txt;
+        elSub.textContent = f.sub;
+        elTeto.textContent = f.teto;
+        elJuros.textContent = f.juros;
+        elEntrada.textContent = f.entrada;
+
+        var pct = (v - range.min) / (range.max - range.min) * 100;
+        range.style.background =
+          "linear-gradient(to right, var(--accent) " + pct + "%, var(--surface-alt) " + pct + "%)";
+
+        var msg = "Oi Isabella! Simulei no seu site.\n\n" +
+          "Renda familiar: " + reais(v) + "\n" +
+          "Resultado: " + f.nome + "\n\n" +
+          "Quero confirmar se tenho direito ao subsídio.";
+        simCta.href = "https://wa.me/" + PHONE + "?text=" + encodeURIComponent(msg);
+      }
+
+      range.addEventListener("input", atualiza);
+      atualiza();
+    }
+  })();
+</script>
